@@ -59,7 +59,7 @@
 
 
 
-![er.drawio](./img/er.drawio.png)
+![er.drawio](../img/er.drawio.png)
 
 
 
@@ -91,7 +91,7 @@ R（U）或 R(A1，A2...,An）
 
 ### 数据库术语
 
-![db.drawio](./img/db.drawio.png)
+![db.drawio](../img/db.drawio.png)
 
 | 术语                    | 描述                                                         |
 | ----------------------- | ------------------------------------------------------------ |
@@ -123,7 +123,7 @@ R（U）或 R(A1，A2...,An）
 
 高级别范式的依赖于低级别的范式，1NF 是最低级别的范式。现代数据库一般遵守 `1NF-BCNF`，4NF 和 5NF 是理论范式。 
 
-![fs](./img/fs.png)
+![fs](../img/fs.png)
 
 #### 第一范式 (1NF)
 
