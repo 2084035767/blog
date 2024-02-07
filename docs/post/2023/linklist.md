@@ -18,7 +18,7 @@ tags:
 
 链表是一种常见的数据结构，用于存储和组织数据。它由一系列节点组成，每个节点包含两部分：数据域（存储数据）和指针域（指向下一个节点）。
 
-![](./img/link.drawio.svg)
+![](../img/link.drawio.svg)
 
 ### 链表与数组的区别
 
@@ -128,7 +128,7 @@ void CreateListH(LinkNode* L, ElemType a[], int n) {
 
 头插法的中心思想是以“头”为主，将所有新结点插入到头结点后，首结点前。
 
-![](./img/linkH.drawio.svg)
+![](../img/linkH.drawio.svg)
 
 ### 尾插法
 
@@ -153,7 +153,7 @@ void CreateListT(LinkNode* L, ElemType a[], int n) {
 
 尾插法的中心思想是以“尾”为主，将所有新结点设为尾结点，不断向后插入。
 
-![](./img/linkT.drawio.svg)
+![](../img/linkT.drawio.svg)
 
 ### 链表的销毁
 
