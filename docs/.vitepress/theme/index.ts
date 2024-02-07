@@ -31,7 +31,7 @@ let homePageStyle: HTMLStyleElement | undefined
 export default {
   extends: DefaultTheme,
   enhanceApp({ app, router }: EnhanceAppContext) {
-    app.provide('DEV','development')
+    app.provide('DEV', 'development')
 
     if (typeof window !== 'undefined') {
       watch(
