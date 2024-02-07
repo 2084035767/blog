@@ -1,0 +1,22 @@
+{
+  "name": "vblog",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "description": "zs's blog",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vitepress dev docs --port=8732",
+    "build": "vitepress build docs"
+  },
+  "devDependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
+    "sass": "^1.70.0",
+    "vitepress": "1.0.0-rc.41",
+    "vitepress-sidebar": "^1.18.6",
+    "vue": "^3.4.15"
+  },
+  "dependencies": {
+    "vite-plugin-vitepress-auto-sidebar": "^1.6.2"
+  }
+}
