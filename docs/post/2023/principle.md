@@ -5,6 +5,7 @@ categories:
   - 知识科普
 tags: 
   - 设计模式
+order: 8
 ---
 
 :::tip 前言

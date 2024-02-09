@@ -1,7 +1,5 @@
 # Git命令修炼宝典
 
-[Xiao〰xiao ? !](javascript:void(0))[Git](javascript:void(0))[100](javascript:void(0))
-
 ## [#](#账户配置)账户配置
 
 - 配置全局账户，对所有 Git 仓库有效

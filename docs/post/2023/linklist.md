@@ -1,11 +1,12 @@
 ---
 title: 胡说| 链表的基本理解
-date: 2023-11-9
+date: 2023-12-9
 categories:
   - 编程知识
 tags:
   - C 语言
   - 数据结构
+order: 12
 ---
 
 :::tip

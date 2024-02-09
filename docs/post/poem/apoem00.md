@@ -14,6 +14,8 @@ publish: false
 
 :::
 
-
+<script setup> 
+    import poem from '../../.vitepress/components/poem.vue' 
+</script>
 
 <poem t=" " :p="[]"/>

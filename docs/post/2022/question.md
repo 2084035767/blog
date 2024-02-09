@@ -3,6 +3,7 @@ title: 转载| 提问的智慧
 date: 2022-12-23
 categories: 
   - 知识科普
+order: 12
 ---
 
 ::: tip
@@ -605,15 +606,3 @@ Jeff Bigler 的观察总结和这个相关也值得一读 ( **[tact filters](htt
 **帮助你的社区从问题中学习** 。当回复一个好问题时，问问自己`如何修改相关文件或常见问题文件以免再次解答同样的问题？`，接着再向文件维护者发一份补丁。
 
 如果你是在研究一番后才做出的回答， **展现你的技巧而不是直接端出结果** 。毕竟`授人以鱼不如授人以渔`。
-
-相关资源
-----
-
-如果你需要个人电脑、Unix 系统和网络如何运作的基础知识，参阅 [Unix 系统和网络基本原理](http://en.tldp.org/HOWTO/Unix-and-Internet-Fundamentals-HOWTO/)。
-
-当你发布软件或补丁时，试着按[软件发布实践](http://en.tldp.org/HOWTO/Software-Release-Practice-HOWTO/index.html)操作。
-
-鸣谢
---
-
-Evelyn Mitchel 贡献了一些愚蠢问题例子并启发了编写`如何更好地回答问题`这一节， Mikhail Ramendik 贡献了一些特别有价值的建议和改进。

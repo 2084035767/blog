@@ -1,5 +1,5 @@
 ---
-title: 关于| 解读域名
+title: 关于| 域名那些事
 date: 2022-8-26
 categories:
   - 知识科普

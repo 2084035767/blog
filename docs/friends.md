@@ -15,7 +15,10 @@ layout: page
 <VPTeamPage>
 <VPTeamPageTitle>
     <template #title>MY FRIENDS</template>
-    <template #lead>this is my friends</template>
-  </VPTeamPageTitle>
-    <VPTeamMembers size="small" :members="members"/>
+    <template #lead>等什么，快来交换吧</template>
+</VPTeamPageTitle>
+<!--
+ <VPTeamMembers size="small" :members="members"/>
+-->
+   
 </VPTeamPage>

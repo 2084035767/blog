@@ -14,7 +14,9 @@ publish: false
 
 :::
 
-
+<script setup> 
+    import poem from '../../.vitepress/components/poem.vue' 
+</script>
 
 <poem t="《戴月孤饮》" :p="['流水溅鸣闻雀声，荷莲镜波依云停','竹林坐迎兰亭人，白云赴宴青风吟','临空万里晴雨凝，拂袖不许桃花零','参商相念但隔月，只影独酌坐夜深' ]"/>
 

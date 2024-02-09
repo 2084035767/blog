@@ -1,11 +1,11 @@
 ---
 title: 诗词|《戴月孤饮》
-date: 2023-4-16
+date: 2021-4-16
 categories: 
   - 随笔感想
 tags: 
   - 诗词
-publish: false
+order: 4
 ---
 
 ::: tip 前言
@@ -14,6 +14,8 @@ publish: false
 
 :::
 
-
+<script setup> 
+    import poem from '../../.vitepress/components/poem.vue' 
+</script>
 
 <poem t="《戴月孤饮》" :p="['流水溅鸣闻雀声，荷莲镜波依云停','竹林坐迎兰亭人，白云赴宴青风吟','临空万里晴雨凝，拂袖不许桃花零','参商相念但隔月，只影独酌坐夜深' ]"/>

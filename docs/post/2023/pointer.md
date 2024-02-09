@@ -5,6 +5,7 @@ categories:
   - 编程知识
 tags:
   - C 语言
+order: 10
 ---
 
 ::: tip 前言
