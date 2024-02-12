@@ -133,8 +133,6 @@ ASCII 字符集中的数字和字母大家应该都很熟了，这边再对两�
 
 `<ctype.h>` 中的函数对 ASCII 字符大致作了如下划分：
 
-![image-20240118163241569](C:/Users/20840/AppData/Roaming/Typora/typora-user-images/image-20240118163241569.png)
-
 控制字符那些不用管，不要求的函数不用管。只要记得 `isspace` 和 `isblank` 的区别就行了。
 
 
