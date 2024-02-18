@@ -28,7 +28,7 @@ JSON Web Token由三部分组成，它们之间用圆点(.)连接。这三部分
 - Payload
 - Signature
 
-```JWT
+```
 xxxxx.yyyyy.zzzzz
 ```
 

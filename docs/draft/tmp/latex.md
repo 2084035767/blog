@@ -1,5 +1,5 @@
 ---
-title: 关于| LaTeX 初级入门（一）
+title: 教程| LaTeX 初级入门（一）
 date: 2022-8-26
 categories:
   - 知识科普

@@ -15,26 +15,6 @@ tags:
 
 ## 简介
 
-
-
-## 往期干货笔记整理
-
-- [熬夜肝了个Linux速查备忘手册.pdf](http://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247500691&idx=1&sn=c20c5d3fa04b6e055271edb372fb39c7&chksm=fddd1557caaa9c4172fbc32899fe29a4f5e135149789b2d47044712c0450874d1ad0375d974b&scene=21#wechat_redirect)
-- [我的浏览器收藏夹大公开](http://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247499031&idx=1&sn=cdcc0c523965381c0da71dcc464b858e&chksm=fddd2bd3caaaa2c5427f4045a66d79f4ea7913a3673197701973ee67a77e52ea7dc7ba75b264&scene=21#wechat_redirect)
-- [数据结构和算法刷题笔记.pdf下载](http://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247494128&idx=1&sn=337ed14a6b5abf419e7391f958f7b268&chksm=fddd3f34caaab622c20582d0c367b8d6c7da6a63009bf42ecf64d97d8bc7f04fb2f150de6335&scene=21#wechat_redirect)
-- [LeetCode算法刷题C/C++版答案pdf下载](http://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247498105&idx=1&sn=708ea67ce1156546066539a0f3e3b9a3&chksm=fddd2fbdcaaaa6ab09ab0d153862f9ff9f124052db0e392688dd082d04fe020301182858f110&scene=21#wechat_redirect)
-- [LeetCode算法刷题Java版答案pdf下载](http://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247498311&idx=1&sn=f6158d86cbc2787212d601a07bfe91cd&chksm=fddd2c83caaaa595b103bfe25561ffffe4fce60fb670da2c418bea5cfbbed4327c134dc3665b&scene=21#wechat_redirect)
-- [找工作简历模板集(word格式)下载](http://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247485673&idx=2&sn=bfb41bdbb05b00a6d3b85e004c2b6978&chksm=fddede2dcaa9573ba76f6f8e0cede56088592aec946cc8231df67a0bbd5395cba045f70ae084&scene=21#wechat_redirect)
-- [Java基础核心知识大总结.pdf 下载](https://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247490077&idx=1&sn=7d0548efc07eb9329f24156ba28850af&scene=21#wechat_redirect)
-- [C/C++常见面试题（含答案）下载
-  ](https://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247489333&idx=1&sn=1781783d88e5df818fc6d1d34b91a137&scene=21#wechat_redirect)
-- [设计模式学习笔记.pdf下载](http://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247495147&idx=1&sn=1311234206bd2f2074b2fed1293b22b2&chksm=fddd3b2fcaaab239a852c7654ace33bb2f1701da32a5848a96048cb9e03fbfa7dc35a3a475c4&scene=21#wechat_redirect)
-- [Java后端开发学习路线+知识点总结](https://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247485877&idx=1&sn=205358a011cc79a3f94b248e1a82cb97&scene=21#wechat_redirect)
-- [前端开发学习路线+知识点总结](https://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247490220&idx=1&sn=0e5fbec4253536cff2a7221d8b594206&scene=21#wechat_redirect)
-- [大数据开发学习路线+知识点总结](http://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247493090&idx=1&sn=4441ed36a5ec42ba0c3d7a1da5439d7c&chksm=fddd3326caaaba306944d6820275f672f55a12f053db0df9bb7caba56be969d07a894f8141d6&scene=21#wechat_redirect)
-- [C/C++(后台)学习路线+知识点总结](https://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247485273&idx=1&sn=362f1b28085940e7d328c3c18097c678&scene=21#wechat_redirect)
-- [嵌入式开发学习路线+知识点总结](https://mp.weixin.qq.com/s?__biz=MzU4ODI1MjA3NQ==&mid=2247489152&idx=1&sn=5a1e93a26643046b53e46a86b6a30da9&scene=21#wechat_redirect)
-
 # 一、前言
 
 谈到面向对象技术的分析和设计，自然就离不开 UML。对于 UML 这个概念，很多程序员朋友耳熟能详，也有在用，但在工作中，一些朋友其实并不擅长使用 UML 甚至对 UML 这个东西模棱两可，也包括我自己。因此我希望可以结合自己的经验和实践，写一篇 UML 的入门文章，帮助做面向对象的程序员朋友能更好的利用它，从而顺利完成自己的编程设计工作。

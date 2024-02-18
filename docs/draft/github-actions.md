@@ -53,7 +53,7 @@ GitHub Actions 使用 YAML 语法定义工作流。每一个工作流保存为�
 2. 在 `.github/workflows/` 目录，创建一个文件，名为 `learn-github-actions.yml` ，添加下面的代码：
 
 ```yaml
-yaml复制代码name: learn-github-actions
+name: learn-github-actions
 on: [push]
 jobs:
   check-bats-version:
@@ -76,56 +76,49 @@ jobs:
 为了帮助你理解 YAML 语法，这节会解释例子中的每行代码：
 
 ```yaml
-yaml
-复制代码name: learn-github-actions
+name: learn-github-actions
 ```
 
 可选，工作流的名字，会出现在 GitHub 仓库的 Actions 选项栏里。
 
 ```yaml
-yaml
-复制代码on: [push]
+on: [push]
 ```
 
 指定工作流的触发事件。这个例子里，使用是 `push` 事件，当有人提交了一个代码修改或者合并了一个 pull request ，工作流就会触发。提交到每个分支都会被触发，如果你想在指定分支、路径、标签，查看 「[GitHub Actions 工作流语法](https://link.juejin.cn/?target=https%3A%2F%2Fdocs.github.com%2Factions%2Freference%2Fworkflow-syntax-for-github-actions%23onpushpull_requestpaths)」
 
 ```yaml
-yaml
-复制代码jobs:
+jobs:
 ```
 
 将运行在 `learn-github-actions` 工作流的所有任务分组在一起。
 
 ```yaml
-yaml
-复制代码check-bats-version:
+check-bats-version:
 ```
 
 定义了一个名为`check-bats-version` 的任务，子键（child key）会定义该任务的属性。
 
 ```yaml
-yaml
-复制代码  runs-on: ubuntu-latest
+runs-on: ubuntu-latest
 ```
 
 配置任务运行在最新的 Ubuntu Linux 运行器。
 
 ```yaml
-yaml
-复制代码 steps:
+steps:
 ```
 
 将 `check-bats-version` 任务下的所有步骤分为一组，嵌套的每一个条目都是一个独立的 action 或者 shell 脚本。
 
 ```yaml
-yaml
-复制代码- uses: actions/checkout@v2
+- uses: actions/checkout@v2
 ```
 
 `uses` 关键字指定了这个步骤运行 `actions/checkout` 动作的 `v2` 大版本 。这是一个可以检出仓库代码到运行器的动作，它允许你运行脚本或者其他动作侵入你的代码（比如构建或者测试工具）。
 
 ```yaml
-yaml复制代码- uses: actions/setup-node@v2
+- uses: actions/setup-node@v2
   with:
     node-version: '14'
 ```
@@ -133,15 +126,13 @@ yaml复制代码- uses: actions/setup-node@v2
 这个步骤会使用 `actions/setup-node@v2` 动作安装指定版本的 Nodejs ，这会在你的 `PATH` 加上 `node` 和 `npm` 命令。
 
 ```yaml
-yaml
-复制代码- run: npm install -g bats
+- run: npm install -g bats
 ```
 
 `run` 关键字会告诉任务在运行器上执行一个命令。在这个例子中，你正在使用 `npm` 安装 `bats` 软件测试包。
 
 ```yaml
-yaml
-复制代码- run: bats -v
+- run: bats -v
 ```
 
 最终，你运行 `bats` 命令，传入一个可以打印软件版本的参数。
@@ -155,7 +146,7 @@ yaml
 现在我们再来看 GitHub 同步 Gitee 的代码，是不是就清楚很多了：
 
 ```yaml
-yaml复制代码name: syncToGitee
+name: syncToGitee
 on:
   push:
     branches:
@@ -321,5 +312,5 @@ workflow 文件的主体是`jobs`字段，表示要执行的一项或多项任�
 
 ## 参考三三
 
-- [还不会用 GitHub Actions ？看看这篇 - 掘金 (juejin.cn)](https://juejin.cn/post/7042619884643024903)
-- [GitHub Actions 入门教程 - 阮一峰的网络日志 (ruanyifeng.com)](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+- https://juejin.cn/post/7042619884643024903
+- http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html

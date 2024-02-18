@@ -1,11 +1,11 @@
 ---
 title: 转载|  经济学十大原理
-date: 2023-5-11
+date: 2023-11-11
 categories: 
   - 知识了解
 tags: 
   - 经济学
-order: 5
+order: 11
 ---
 
 

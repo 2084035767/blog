@@ -395,8 +395,3 @@ git push origin --delete master
 git push --force origin master
 ```
 
-[Edit this page](https://github.com/vuepress-reco/vuepress-theme-reco-next/edit/main/example/docs/Ajax_Git/git.md)
-
-[Last Updated 2022-10-20 23:10:23](javascript:void(0))
-
-Git常用命令及问题 →
