@@ -113,6 +113,8 @@ yarn add <package>@<tag>
 yarn global add <package>
 ```
 
+:::
+
 ::: details 知识扩展
 
 #### 安装失败
@@ -152,7 +154,7 @@ npm install <package> -D
 
 > 全局依赖添加 `-g` 或 `global` 参数，以下省略全局依赖😶
 
-:::
+::: code-group
 
 ```sh [npm]
 # 查看项目依赖
@@ -184,7 +186,7 @@ yarn upgrade <package>
 
 > 全局依赖添加 `-g` 或 `global` 参数，以下省略全局依赖😶
 
-:::
+::: code-group
 
 ```sh [npm]
 # 卸载依赖
@@ -202,7 +204,7 @@ yarn remove <package>
 
 ### 运行脚本
 
-:::
+::: code-group
 
 ```sh [npm]
 #  运行脚本
