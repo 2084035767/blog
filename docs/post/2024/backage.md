@@ -167,7 +167,7 @@ npm update
 npm update <package>
 ```
 
-### 
+
 
 ```sh [yarn]
 # 查看项目依赖
@@ -180,7 +180,7 @@ yarn upgrade
 yarn upgrade <package>
 ```
 
-
+:::
 
 ### 卸载依赖
 
