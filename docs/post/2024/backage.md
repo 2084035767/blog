@@ -204,6 +204,8 @@ yarn remove <package>
 
 ### 运行脚本
 
+> 就是 “package.json”文件里的 “scripts” 字段，你不会忘了吧🤔
+
 ::: code-group
 
 ```sh [npm]
@@ -228,17 +230,16 @@ yarn run [script]
 
 ```sh
 # 查看当前镜像源
-yarn config get registry
 npm config get registry
-pnpm config get registry
+
+yarn config get registry
 
 # 设置镜像源
 # 全局使用
-npm config set registry https://registry.nlark.com/
-yarn config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com
 
 # 临时使用
-npm install --registry https://registry.npm.taobao.org
+npm i --registry https://registry.npmmirror.com
 
 # 还原镜像源
 npm config set registry https://registry.npmjs.org
@@ -265,9 +266,9 @@ nrm use taobao
 
 ## 写在最后
 
-> 恭喜学会了基础命令🎉。想要深度学习，请查询相关资料。（**80%**，我说的😉）
+> 恭喜你学会了包管理基础命令🎉。想要深度学习，请查询相关资料。
 
-这些命令是最基础的同时也是最常用的，只要学会这些你就会**80%**的操作。
+这些命令是最基础的同时也是最常用的，只要学会这些你就会80%的操作（**80%**，我说的😉）
 
 
 
