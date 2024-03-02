@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-import { generateSidebar } from 'vitepress-sidebar'
 import { head, nav, sidebar } from './configs'
 
 export default defineConfig({
@@ -23,24 +22,7 @@ export default defineConfig({
   /* 主题配置 */
   themeConfig: {
     nav,
-    sidebar: generateSidebar([
-      {
-        documentRootPath: '/docs',
-        scanStartPath: 'post',
-        resolvePath: '/post/',
-        excludeFolders: ['img', 'books', 'poem'],
-        sortMenusByFrontmatterOrder: true,
-        useTitleFromFrontmatter: true,
-      },
-      {
-        documentRootPath: '/docs',
-        scanStartPath: 'base',
-        resolvePath: '/base/',
-        excludeFolders: ['img'],
-        sortMenusByFrontmatterOrder: true,
-        useTitleFromFrontmatter: true,
-      },
-    ]),
+    sidebar,
     i18nRouting: false,
     logo: '/logo.jpg',
     search: {

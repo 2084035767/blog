@@ -67,4 +67,4 @@ cron表达式是一个字符串，由6到7个字段组成，用空格分隔。�
 
 ### 参考
 
-- [简洁明了看懂cron表达式]([简洁明了看懂cron表达式 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/437328366))
+- https://zhuanlan.zhihu.com/p/437328366
