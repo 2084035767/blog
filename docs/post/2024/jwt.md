@@ -1,5 +1,5 @@
 ---
-title: 胡说| JWT 认证
+title: 胡说| JWT 基础认识
 date: 2024-3-3
 categories:
   - 编程知识
@@ -85,9 +85,9 @@ header典型的由两部分组成：token的类型（“JWT”）和算法名称
 
 ### 2.2 载荷
 
-::: warning
+::: warning 注意
 
-注意：载荷中的这3个声明并不是都要同时设置
+载荷中的这3个声明并不是都要同时设置
 
 :::
 
@@ -110,9 +110,9 @@ JWT的第二部分是payload，它包含声明（要求）。声明是关于实�
 
 
 
-::: waring
+::: waring 注意
 
-注意，不要在JWT的payload或header中放置敏感信息，除非它们是加密的。
+不要在JWT的payload或header中放置敏感信息，除非它们是加密的。
 
 :::
 
@@ -192,7 +192,7 @@ HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload), secret)
 
 
 
-::: warning 重要
+::: danger 重要
 
 密钥一定保管好，一定不要泄露出去。JWT 安全的核心在于签名，签名安全的核心在密钥。
 

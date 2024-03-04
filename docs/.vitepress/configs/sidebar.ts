@@ -26,4 +26,12 @@ export const sidebar: DefaultTheme.Config['sidebar'] = generateSidebar([
     // sortMenusByFrontmatterOrder: true,
     useTitleFromFileHeading: true,
   },
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'leetcode',
+    resolvePath: '/leetcode/',
+    excludeFolders: ['img'],
+    // sortMenusByFrontmatterOrder: true,
+    useTitleFromFileHeading: true,
+  },
 ])
