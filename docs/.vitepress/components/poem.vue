@@ -24,5 +24,5 @@ const props = defineProps({
 </script>
 
 <style>
-@import url(https://cdn.bootcdn.net/ajax/libs/heti/0.9.4/heti.min.css);
+@import url('https://cdn.bootcdn.net/ajax/libs/heti/0.9.4/heti.min.css');
 </style>
