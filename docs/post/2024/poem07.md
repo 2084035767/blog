@@ -1,10 +1,10 @@
 ---
-title: 句子|《生命》
+title: 诗词|《生命》
 date: 2024-4-10
 categories: 
   - 随笔感想
 tags: 
-  - 句子
+  - 诗词
 order: 4
 ---
 
