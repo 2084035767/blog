@@ -83,15 +83,15 @@ struct node* next; // 指针域（存储结点指针）
 
 > 通常在链表的定义中，为了健壮性，定义会稍微微复杂一点🤔。
 
-```c
+```cpp
 typedef int ElemType; // int 类型别名
 typedef struct Node {
 	ElemType data; // 数据域
 	struct Node* next; // 指针域
-} Node,*LinkNode; // 结点别名
+} LNode,*LinkNode; // 结点别名
 ```
 
-其中`Node*`强调这是一个**结点**，而`*LinkNode`强调这是一个**链表**，其实是一个东西。
+其中`LNode*`强调这是一个**结点**，而`*LinkNode`强调这是一个**链表**，其实是一个东西。
 
 
 
@@ -99,12 +99,14 @@ typedef struct Node {
 
 > 下面的头插法和尾插法已经包含了链表的初始化。这里拿出来简单理解。
 
-```c
-void InitList(LinkNode* L) {
-    // 申请内存空间
-	(*L) = (LinkNode)malloc(sizeof(Node));
-	// 单链表 尾结点设空
-	(*L) ->next = NULL;
+```cpp
+//初始化(带有头节点)
+bool InitList(LinkList &L) {
+    L = (LNode *) malloc(sizeof(LNode));//分配一个头节点
+    if (L == NULL)
+        return false;//头节点分配失败，可能是内存不足
+    L->next = NULL;//头节点之后暂时没有节点，头节点也不存放数据
+    return true;
 }
 ```
 
@@ -112,22 +114,31 @@ void InitList(LinkNode* L) {
 
 ### 头插法
 
-```c {11-14}
-void CreateListH(LinkNode* L, ElemType a[], int n) {
-	LinkNode* s;
-	// 申请内存空间
-	(*L) = (LinkNode)malloc(sizeof(Node));
-	// 首将会变尾，将尾结点设空
-	(*L) ->next = NULL;
-	for (int i = 0; i < n; i++) {
-		s = (LinkNode)malloc(sizeof(Node));
-		// 将数据放入s的数据域
-		s ->data = a[i];
-		// 将s插入首结点前
-		s ->next = (*L) ->next;
-		// 将s插入头结点后
-		(*L) ->next = s;
-	}
+```cpp {19-21}
+// 头插法
+// 通过头插法建立的链表，顺序为插入时元素的逆序
+LinkList HeadInsert(LinkList &L) {
+    // 设置ElemType为整型
+    int x;
+    // 建立头结点（申请的空间为一个结点大小的空间）
+    L = (LinkList)malloc(sizeof(LNode));
+    // 初始化为空链表
+    // 由于L在分配空间后，头指针可能并非指向NULL，而是其他任意区域，这可能导致问题发生
+    // 动态分配的空间之前可能存在脏数据
+    L->next = NULL;
+    // 不同于尾插法，头插法无需定义更多指针
+    LNode* s;
+    // 输入结点的值
+    scanf("%d", &x);
+    // 表示键入9999后建表结束
+    while(x != 9999) {
+        s = (LNode*)malloc(sizeof(LNode));
+        s->data = x;
+        s->next = L->next;
+        L->next = s;
+        // 继续输入下一个结点的值，直至输入9999结束
+        scanf("%d", &x);
+    }
 }
 ```
 
@@ -137,22 +148,39 @@ void CreateListH(LinkNode* L, ElemType a[], int n) {
 
 ### 尾插法
 
-```c {9-12}
-void CreateListT(LinkNode* L, ElemType a[], int n) {
-	LinkNode s, r;
-	(*L) = (LinkNode)malloc(sizeof(Node));
-	// 暂时代替头结点
-	r = *L;
-	for (int i = 0; i < n; i++) {
-		s = (LinkNode)malloc(sizeof(Node));
-		s ->data = a[i];
-		// 将r指向s
-		r ->next = s;
-		// 将r代替s成为尾结点
-		r = s;
-	}
-	// 最后，尾结点设空
-	r ->next = NULL;
+```cpp {23-26}
+// 尾插法
+// 通过尾插法建立的链表，顺序为插入时元素的顺序
+LinkList TailInsert(LinkList &L) {
+    // 设置ElemType为整型
+    int x;
+    // 建立头结点（申请的空间为一个结点大小的空间）
+    L = (LinkList)malloc(sizeof(LNode));
+    // 初始化为空链表
+    // 由于L在分配空间后，头指针可能并非指向NULL，而是其他任意区域，这可能导致问题发生
+    // 动态分配的空间之前可能存在脏数据
+    L->next = NULL;
+    // 定义表尾指针
+    // 对于尾插法，如果只通过头结点遍历的话
+    // 每次插入时都要先遍历到表尾，时间复杂度为O(1+2+...+n-1)=O(n^2)
+    // 所以选择增加一个尾指针，来避免遍历
+    // s为要插入的结点，r为表尾指针
+    LNode *s, *r = L;
+    // 输入结点的值
+    scanf("%d", &x);
+    // 表示键入9999后建表结束
+    while(x != 9999) {
+        s = (LNode*)malloc(sizeof(LNode));
+        s->data = x;
+        r->next = s;
+        // r指向新的表尾结点
+        r = s;
+        // 继续输入下一个结点的值，直至输入9999结束
+        scanf("%d", &x);
+    }
+    // 尾指针置空
+    r->next = NULL;
+    return L;
 }
 ```
 
@@ -162,17 +190,17 @@ void CreateListT(LinkNode* L, ElemType a[], int n) {
 
 ### 链表的销毁
 
-```c
-void DestroyList(LinkNode* L) {
-	LinkNode ptr = *L, p = (*L) ->next;
+```cpp
+void DestroyList(LinkNode &L) {
+    LNode*p=L->next,*q;
+	LinkNode ptr = L, p = L->next;
 	while ( p != NULL) {
         //循环，逐个释放各个节点
-		free(ptr);
-		ptr = p;
-		p = ptr ->next;
+		q=p;
+		p=p->next;
+		free(q);
 	}
-	free(ptr);
-    *L = NULL; // 将头指针置为空
+	free(L);
 }
 ```
 
@@ -180,17 +208,32 @@ void DestroyList(LinkNode* L) {
 
 链表的遍历（也叫链表的输出），中心思想是一直指向结点的指针域，判断是否有这个结点。
 
-```c
-void DispList(LinkNode *L) {
+```cpp
+// 判断单链表是否为空
+bool Empty(LinkList L) {
+    // 有头结点，那么头结点指针域指向NULL，单链表即为空
+    if(L->next == NULL) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// 输出所有链表元素
+void PrintList(LinkList L) {
+    if(Empty(L)) {
+        printf("the list is empty");
+    }
     // 代替头结点的指针域
-	LinkNode p = (*L) ->next;
+    LNode* p = L->next;
     // 判断头结点的指针域是否为空
-	while (p) {
+    while(p !=  NULL) {
         // 输出数据域的数据
-		printf("%d\n", p ->data);
-        // 指向下一个结点的指针域
-		p = p ->next;
-	}
+        printf("%d  ", p->data);
+        p = p->next;
+    }
+    // 指向下一个结点的指针域
+    printf("\n");
 }
 ```
 
@@ -198,27 +241,30 @@ void DispList(LinkNode *L) {
 
 > 双链表，无非是添加一个向前的指针域罢了😋。
 
-```c
+```cpp
 typedef int ElemType;
 typedef struct Node{
 	ElemType data; // 数据域
 	struct Node* prior; // 前指针域 
 	struct Node* next; // 后指针域
-}Node,*LinkNode;
+}LNode,*LinkNode;
 ```
 
 ### 初始化
 
 > 对于双链表要多考虑一个“前指针”的指向问题，可别忘了🤨。
 
-```c
-void InitList(LinkNode* L){
+```cpp
+bool InitList(LinkNode &L){
     // 申请内存空间
-    (*L) = (LinkNode)malloc(sizeof(Node));
+    L = (LNode *) malloc(sizeof(LNode));//分配一个头节点
+    if (L == NULL)
+        return false;//头节点分配失败，可能是内存不足
     // 双链表 前指针域设空
-    (*L)->prior = NULL;
+    L->prior = NULL;
     // 双链表 后指针域设空
-    (*L)->next = NULL;
+    L->next = NULL;
+    return true;
 }
 ```
 
@@ -230,14 +276,25 @@ void InitList(LinkNode* L){
 
 ### 初始化
 
-```c
+```cpp
 //初始化单链表
-void InitList(LinkNode* L) {
-	(*L) = (LinkNode)malloc(sizeof(Node));
+bool InitList(LinkNode &L) {
+	L = (LNode *) malloc(sizeof(LNode));//分配一个头节点
 	//循环链表，指针域为头结点
-	(*L) ->next = L;
+    if (L == NULL)
+        return false;//头节点分配失败，可能是内存不足
+	L ->next = L;
+    return true;
 }
 ```
+
+## 三种写法
+
+todo
+
+
+
+
 
 ## 写在最后
 
