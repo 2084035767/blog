@@ -11,9 +11,9 @@
   },
   "devDependencies": {
     "markdown-it-mathjax3": "^4.3.2",
-    "sass": "^1.70.0",
-    "vitepress": "1.0.0-rc.41",
-    "vitepress-sidebar": "^1.18.6",
-    "vue": "^3.4.15"
+    "sass": "^1.72.0",
+    "vitepress": "1.0.1",
+    "vitepress-sidebar": "^1.21.0",
+    "vue": "^3.4.21"
   }
 }
