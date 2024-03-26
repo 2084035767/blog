@@ -36,7 +36,7 @@ order: 10
 
 正确的格式应该是：
 
-```git
+```bash
 git commit -m ":emoji: 描述"
 ```
 

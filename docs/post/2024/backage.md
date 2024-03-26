@@ -5,6 +5,7 @@ categories:
   - 编程知识
 tags: 
   - npm
+order: 1
 ---
 
 # 包管理基础命令
