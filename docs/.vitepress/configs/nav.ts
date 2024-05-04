@@ -7,7 +7,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     items: [
       { text: '文档', link: '/base/', activeMatch: '^/base/' },
       // { text: '源码', link: '/code/', activeMatch: '^/code/' },
-      { text: '力扣', link: '/leetcode/', activeMatch: '^/leetcode/' },
+      // { text: '力扣', link: '/leetcode/', activeMatch: '^/leetcode/' },
     ],
   },
 
