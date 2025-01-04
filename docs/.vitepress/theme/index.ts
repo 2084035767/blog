@@ -1,6 +1,7 @@
-import { watch } from 'vue'
+
 import { EnhanceAppContext } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import { watch } from 'vue'
 
 import './styles/index.scss'
 
