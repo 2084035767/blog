@@ -1,11 +1,11 @@
 ---
-title: 关于| MarkDown 语法
-date: 2022-3-25
+title: 学点| MarkDown 语法
+date: 2025-1-12
 categories:
-  - 知识科普
+  - 编程知识
 tags:
   - MarkDown
-publish: false
+order: 1
 ---
 
 ::: tip
