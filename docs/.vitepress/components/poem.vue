@@ -23,6 +23,6 @@ const props = defineProps({
 })
 </script>
 
-<style>
-@import url('https://cdn.bootcdn.net/ajax/libs/heti/0.9.4/heti.min.css');
+<style scoped lang="scss">
+@import 'https://s4.zstatic.net/ajax/libs/heti/0.9.5/heti.min.css';
 </style>
