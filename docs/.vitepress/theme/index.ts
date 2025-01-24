@@ -1,7 +1,9 @@
-
 import { EnhanceAppContext } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { watch } from 'vue'
+import CustomLayout from './components/CustomLayout.vue'
+import CustomPoem from './components/CustomPoem.vue'
+import HomeUnderline from './components/HomeUnderline.vue'
 
 import './styles/index.scss'
 
@@ -31,9 +33,11 @@ let homePageStyle: HTMLStyleElement | undefined
 
 export default {
   extends: DefaultTheme,
+  Layout: CustomLayout,
   enhanceApp({ app, router }: EnhanceAppContext) {
+    app.component('HomeUnderline', HomeUnderline)
+    app.component('poem', CustomPoem)
     app.provide('DEV', 'development')
-
     if (typeof window !== 'undefined') {
       watch(
         () => router.route.data.relativePath,

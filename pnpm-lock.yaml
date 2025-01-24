@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@types/dom-view-transitions':
+        specifier: ^1.0.5
+        version: 1.0.5
       markdown-it-mathjax3:
         specifier: ^4.3.2
         version: 4.3.2
@@ -509,6 +512,9 @@ packages:
 
   '@shikijs/vscode-textmate@10.0.1':
     resolution: {integrity: sha512-fTIQwLF+Qhuws31iw7Ncl1R3HUDtGwIipiJ9iU+UsDUwMhegFcQKQHd51nZjb7CArq0MvON8rbgCGQYWHUKAdg==}
+
+  '@types/dom-view-transitions@1.0.5':
+    resolution: {integrity: sha512-N2sILR7fxSMnaFaAPwGj4DtHCXjIyQTHt+xJyf9jATpzUsTkMNM0DWtqZB6W7f501B/Y0tq3uqat/VlbjuTpMA==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -1642,6 +1648,8 @@ snapshots:
       '@types/hast': 3.0.4
 
   '@shikijs/vscode-textmate@10.0.1': {}
+
+  '@types/dom-view-transitions@1.0.5': {}
 
   '@types/estree@1.0.6': {}
 

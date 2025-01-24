@@ -10,7 +10,7 @@ export const nav: DefaultTheme.Config['nav'] = [
   //     { text: '力扣', link: '/leetcode/', activeMatch: '^/leetcode/' },
   //   ],
   // },
-
+  { text: '笔记', link: '/note/', activeMatch: '^/note/' },
   { text: '友链', link: '/friends', activeMatch: '^/friends' },
   { text: '关于', link: '/about', activeMatch: '^/about' },
 ]

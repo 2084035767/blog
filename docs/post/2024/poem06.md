@@ -14,9 +14,6 @@ order: 3
 
 :::
 
-<script setup> 
-    import poem from '../../.vitepress/components/poem.vue' 
-</script>
 <poem t="《远君思》" :p="['雁书寄云夕阳楼，幽叶乘风远影舟','雨点弦歌系相思，夜饮浓酒聆忧愁','人间暮景暂且否，行云晚光倾水流','一览山川敛月色，半江星辰皆入眸']"/>
 
 
