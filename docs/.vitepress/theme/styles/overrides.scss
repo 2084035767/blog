@@ -12,11 +12,14 @@
   :root {
     --vp-sidebar-width: 260px;
   }
+
   .VPNav {
+
     // 借鉴 https://cn.vuejs.org 的处理
     .DocSearch-Button-Placeholder {
       display: none;
     }
+
     .VPNavBarMenuLink,
     .VPNavBarMenuGroup .button {
       padding-left: 10px;
@@ -24,12 +27,14 @@
     }
   }
 }
+
 @media (max-width: 992px) {
   .VPNav {
     .VPNavBar {
       padding-left: 24px;
       padding-right: 24px;
     }
+
     .VPNavBarMenuLink,
     .VPNavBarMenuGroup .button {
       padding-left: 8px;
@@ -37,11 +42,13 @@
     }
   }
 }
+
 @media (max-width: 800px) {
   .VPNav {
     .VPNavBarSearch {
       padding-left: 16px;
     }
+
     .VPNavBarMenuLink,
     .VPNavBarMenuGroup .button {
       padding-left: 6px;
@@ -61,6 +68,7 @@
 .custom-block .custom-block-title {
   font-size: 16px;
 }
+
 .custom-block.tip .custom-block-title {
   color: var(--vp-c-brand);
 }
@@ -71,9 +79,15 @@
     opacity: 0.8;
     transition: opacity 1s ease;
   }
+
   .image-container:hover .image-bg {
     opacity: 0.4;
   }
+}
+
+/* logo图片圆角 */
+.logo {
+  border-radius: 0.375rem;
 }
 
 table {
@@ -91,7 +105,7 @@ table {
   over scoped class data attribute.
 */
 .dark .vp-doc a,
-.dark .vp-doc a > code,
+.dark .vp-doc a>code,
 .dark .VPNavBarMenuLink.VPNavBarMenuLink:hover,
 .dark .VPNavBarMenuLink.VPNavBarMenuLink.active,
 .dark .link.link:hover,
@@ -100,8 +114,9 @@ table {
 .dark .pager-link .title {
   color: var(--vp-c-brand-lighter);
 }
+
 .dark .vp-doc a:hover,
-.dark .vp-doc a > code:hover {
+.dark .vp-doc a>code:hover {
   color: var(--vp-c-brand-lightest);
   opacity: 1;
 }

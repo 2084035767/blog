@@ -3,8 +3,6 @@ title: 胡说| Git的基本使用
 date: 2023-2-29
 categories: 
   - 编程知识
-tags: 
-  - Git
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: 关于| Gitmoji
+title: 关于| Gitmoji 简明使用
 date: 2022-10-24
 categories:
   - 知识科普
@@ -8,19 +8,23 @@ tags:
 order: 10
 ---
 
+# Gitmoji 简明使用
+
 ::: tip 前言
 
-最近查看别人仓库，看见别人的 “commit” 竟然有表情？那我得查查🧐。
+最近查看别人仓库，看见别人的 “commit” 竟然有表情？那我得查查🧐
 
 :::
 
-## Gitmoji 简介
+## 简介
 
 - `Gitmoji ` 是一种在 「Git」 提交信息中使用 “emoji” 的约定，旨在通过使用图形符号来传达更多的信息和情感。`Gitmoji` 的目标是使 Git 提交信息更加有趣、易读和可理解，从而帮助团队成员更好地合作和交流。
 - 每个 `Gitmoji` 表示一种特定的含义或情感，例如添加新功能、修复错误、优化代码等。它们由一个 “emoji” 表情符号和一个简短的描述组成，用于在提交信息中传达意图。`Gitmoji ` 提供了一种简单而直观的方式来快速了解提交的目的和内容。
 - `Gitmoji ` 的优点在于它能够提供更丰富的信息，帮助团队成员更好地理解提交的目的和内容。它还可以增加提交信息的可读性，使团队成员更容易浏览和理解提交历史。
 
-## Gitmoji 使用方法
+
+
+## 使用方法
 
 ::: tip 说明
 
@@ -44,7 +48,7 @@ git commit -m ":emoji: 描述"
 
 
 
-## Gitmoji 符号表格
+## 常用符号表格
 
 ::: warning
 
@@ -64,9 +68,9 @@ git commit -m ":emoji: 描述"
 | 🚀                         | `:rocket:`                    | 部署应用、发布版本（Deploying stuff）                        |
 | 🎉                         | `:tada:`                      | 开始一个项目（Begin a project）                              |
 | 🙈                         | `:see_no_evil:`               | 添加或更新 .gitignore 文件（Adding or updating .gitignore）  |
-| 1:bookmark:               | `:bookmark:`                  | 发布或创建标签（Release / Version tags）                     |
+| :bookmark:                | `:bookmark:`                  | 发布或创建标签（Release / Version tags）                     |
 | 📦                         | `:package:`                   | 添加或更新已编译文件或包（Updating compiled files or packages） |
-| 1:pushpin:                | `:pushpin:`                   | 指定某个依赖到特定版本（Pin dependencies to specific versions） |
+| :pushpin:                 | `:pushpin:`                   | 指定某个依赖到特定版本（Pin dependencies to specific versions） |
 | ➕                         | `:heavy_plus_sign:`           | 新增依赖（Adding a dependency）                              |
 | ➖                         | `:heavy_minus_sign:`          | 移除依赖（Removing a dependency）                            |
 | 💄                         | `:lipstick:`                  | 更新 UI 和样式文件（Updating the UI and style files）[官网移除] |
@@ -120,11 +124,15 @@ git commit -m ":emoji: 描述"
 | :hammer:                  | `:hammer:`                    | 添加或更新开发脚本（Add or update development scripts）      |
 | 🧪                         | `:test_tube:`                 | 添加一个失败的测试(Add a failing test)                       |
 
+
+
 ## 写在最后
 
 `Gitmoji `只是规范“commit”的一个工具，只要你遵循“commit”规范，可以不用。
 
-> `Gitmoji `算是一个很有意思的项目，大家可以尝试一下。下期见😉
+> `Gitmoji`算是一个很有意思的项目，大家可以尝试一下。下期见😉
+
+
 
 ## 参考三三
 

@@ -1,7 +1,6 @@
 ---
 title: 诗词| 《最终，我是属于自由的》
 date: 2023-3-1
-password: 8dd54ee89a8bba1ca1863897dea45827
 categories: 
   - 随笔感想
 tags: 

@@ -12,8 +12,6 @@ order: 7
 
 # CSS命名规范-BEM
 
-
-
 ## BEM 解决的问题
 
 css 的样式应用是全局性的，没有作用域可言。考虑以下场景：
@@ -255,6 +253,8 @@ var $prevBtn = $('<button class="' + styles.prev + '">上一页</button>');
 ```
 
 `styles.prev` 返回的是一串独一无二且随机的字符串，该字符串对应着样式文件中的选择器。这名字有悖语义化，但 css-loader 支持配置字符串的生成格式。
+
+
 
 ## 参考
 

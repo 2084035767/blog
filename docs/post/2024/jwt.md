@@ -1,6 +1,6 @@
 ---
 title: 胡说| JWT 基础认识
-date: 2024-3-3
+date: 2024-2-3
 categories:
   - 编程知识
 tags:
@@ -8,7 +8,7 @@ tags:
 order: 2
 ---
 
-
+# JWT 基础认识
 
 ::: tip 前言
 

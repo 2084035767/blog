@@ -35,21 +35,25 @@ YAML 支持以下几种数据类型：
 
 ## YAML 对象
 
+::: warning 
+
+冒号后面要加一个空格
+
+:::
+
 对象的几种表示形式：
 
-1、对象键值对使用冒号结构表示 **key: value**，冒号后面要加一个空格。
+1、对象键值对使用冒号结构表示，
 
 ```yaml
 key: value
 ```
 
-2、也可以使用 **key:{key1: value1, key2: value2, ...}**。
+2、也可以使用
 
 ```yaml
-key:{child-key1:value1,child-key2:value2}
+key: {child-key1:value1,child-key2:value2}
 ```
-
-
 
 3、还可使用缩进表示层级关系；
 
@@ -256,8 +260,6 @@ f: !!str true
 
 **&** 锚点和< span class="marked">* 别名，可以用来引用:
 
-
-
 ```yaml
 defaults: &defaults # 添加锚点
   adapter:  postgres
@@ -308,8 +310,10 @@ test:
 [ 'Steve', 'Clark', 'Brian', 'Oren', 'Steve' ]
 ```
 
-> 参考：
->
-> - yaml官网：[https://yaml.org/(opens new window)](https://yaml.org/)
-> - yaml与js的转换demo：[http://nodeca.github.io/js-yaml/(opens new window)](http://nodeca.github.io/js-yaml/)
-> - 菜鸟教程：[https://www.ruanyifeng.com/blog/2016/07/yaml.html(opens new window)](https://www.ruanyifeng.com/blog/2016/07/yaml.html)
+参考：
+
+yaml官网：[https://yaml.org/(opens new window)](https://yaml.org/)
+
+yaml与js的转换demo：[http://nodeca.github.io/js-yaml/(opens new window)](http://nodeca.github.io/js-yaml/)
+
+菜鸟教程：[https://www.ruanyifeng.com/blog/2016/07/yaml.html(opens new window)](https://www.ruanyifeng.com/blog/2016/07/yaml.html)

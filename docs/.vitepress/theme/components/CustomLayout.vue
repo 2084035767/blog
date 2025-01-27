@@ -1,11 +1,11 @@
-
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
 
+const { Layout } = DefaultTheme
 const { isDark } = useData()
-
+// const { frontmatter } = useData()
 const enableTransitions = () =>
   'startViewTransition' in document &&
   window.matchMedia('(prefers-reduced-motion: no-preference)').matches
@@ -41,9 +41,14 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 </script>
 
 <template>
-  <DefaultTheme.Layout>
+  <Layout>
     <!-- 这里可以插入其他插槽组件 -->
-  </DefaultTheme.Layout>
+    <!-- <template #doc-before>
+      <span class="date"
+        >🤗&nbsp;发布时间：{{ frontmatter.date }}</span
+      >
+    </template> -->
+  </Layout>
 </template>
 
 <style>
@@ -74,4 +79,10 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 .check .icon {
   top: -2px;
 } */
+
+.date {
+  font-size: 15px;
+  color: #7f7f7f;
+  margin-right: 10px;
+}
 </style>

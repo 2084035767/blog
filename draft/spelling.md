@@ -163,8 +163,6 @@ tags:
 
 希望这篇文章能帮助你在编程中更好地选择和使用命名规范。如果你对命名规范还有其他疑问，欢迎在评论区留言！
 
-------
-
 ## 参考
 
 - [维基百科：命名约定](https://en.wikipedia.org/wiki/Naming_convention_(programming))

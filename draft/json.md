@@ -1,4 +1,19 @@
-# JSON 简介
+```
+title: 关于| 初等基本函数
+date: 2025-1-1
+categories: 
+  - 知识了解
+```
+
+:::tip 前言
+
+
+
+:::
+
+
+
+## JSON 简介
 
 JSON 全称 (`J` ava `S` cript `O` bject `N` otation )，中文名 JavaScript 对象表示方法。
 

@@ -1,5 +1,5 @@
 ---
-title: 胡说| packageJson 基础认识
+title: 胡说| package 文件基础认识
 date: 2023-1-24
 categories: 
   - 编程知识
@@ -9,7 +9,7 @@ tags:
 order: 1
 ---
 
-
+# package 文件基础认识
 
 ::: tip 前言
 

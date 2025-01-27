@@ -6,7 +6,7 @@ export default defineConfig({
   // base: '/',
   // cleanUrls: true,
   /* markdown 配置 */
-  
+
   lang: 'zh-CN',
   title: '为自由献诗',
   description: '这是子十的博客',
