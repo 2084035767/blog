@@ -1,11 +1,11 @@
 ---
-title: 诗词| x
-date: 2021-12-12
+title: 诗词|《子十》
+date: 2023-7-16
 categories: 
   - 随笔感想
 tags: 
   - 诗词
-publish: false
+order: 7
 ---
 
 ::: tip 前言
@@ -14,5 +14,5 @@ publish: false
 
 :::
 
+<poem t="《子十》" :p="['月绕枝下情缠君，催花末雨枕云东','辰际影坠眠秋湖，应是落眸两湿痕']"/> 
 
-<poem t=" " :p="[]"/>
