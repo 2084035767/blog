@@ -11,660 +11,227 @@ categories:
 
 :::
 
-## 简明 C 标准库
+# C 标准库：初等函数的全面解析与应用
 
-### 为什么要学标准库？
+在 C 语言的世界里，标准库是程序员的得力助手，它提供了一系列经过精心设计的函数、宏和类型定义，帮助我们更高效地完成各种任务。本文将带你深入了解 C 标准库中的初等基本函数，通过背景知识、函数内容和实际应用三个方面，让你对这些函数有更全面的认识。
 
-有一个粗浅的理由，就是图方便。假设有下面这个声明在 `main` 函数中数组：
+## 一、为什么要学习 C 标准库？
+
+在实际编程中，我们经常会遇到一些重复性的工作，比如初始化数组、转换字符大小写等。如果我们每次都从头开始编写代码，不仅耗时耗力，还容易出错。而 C 标准库中的函数正是为了解决这些问题而设计的，它们经过了严格的测试和优化，具有高效性、可靠性和可移植性。学会使用标准库，可以让我们少走弯路，提高代码的质量和开发效率。
+
+## 二、C 标准库的构成
+
+C 标准库包含了大量的函数、宏和类型定义，涵盖了字符串处理、数学计算、文件操作、内存管理等多个领域。每个标准库都有其特定的背景知识和应用场景，下面我们将逐一介绍几个常用的初等基本函数库。
+
+## 三、`<ctype.h>`：字符处理的得力工具
+
+### 背景知识：ASCII 字符集
+
+在计算机中，字符是以数字编码的形式存储的，而 ASCII 字符集是最常用的字符编码之一。它将字符与数字进行了映射，例如字母 'A' 对应 65，'a' 对应 97 等。了解 ASCII 字符集有助于我们更好地理解和使用字符处理函数。
+
+### 函数内容
+
+`<ctype.h>` 提供了一系列用于识别和转换字符的函数，例如：
+
+- **字符判断函数**：
+  - `isalnum(int c)`：判断字符是否为字母或数字。
+  - `isalpha(int c)`：判断字符是否为字母。
+  - `isdigit(int c)`：判断字符是否为数字。
+  - `islower(int c)`：判断字符是否为小写字母。
+  - `isspace(int c)`：判断字符是否为空白字符（包括空格、制表符、换行符等）。
+  - `isupper(int c)`：判断字符是否为大写字母。
+- **字符转换函数**：
+  - `tolower(int c)`：将大写字母转换为小写字母。
+  - `toupper(int c)`：将小写字母转换为大写字母。
+
+### 实际应用
+
+假设我们有一个字符串，需要将其中的小写字母转换为大写字母，可以使用如下代码：
+
+c复制
 
 ```c
-int a[100];
-```
-
-我们知道，这个数组不会被初始化。如果想要把这个数组全部置为 0，你会怎么写呢？
-
-首先会有的想法肯定是：
-
-```c
-for (int i = 0; i < 100; ++i)
-    a[i] = 0;
-```
-
-其实标准库提供了一个函数 `memset`，用来设置一段内存的值：
-
-```c
-memset(a, 0, sizeof(a));
-```
-
-是不是很方便呢？
-
-再来一个例子，把输入中所有的小写字母转换成大写字母。假设输入已经存储在 `char` 数组 `str` 中，根据现有的知识，你会不会这样写：
-
-```c
-for(int i = 0; i < strlen(str); ++i)
-    if ('a' <= str[i] && str[i] <= 'z')
-        str[i] -= 'a' - 'A';
-```
-
-其实标准库提供了判断字符大小写的函数，也提供了转换大小写的函数：
-
-```c
-for(int i = 0; i < strlen(str); ++i)
-    if (islower(str[i]))
-        str[i] = toupper(str[i]);
-```
-
-下面的这段代码，是不是比上面的代码简洁，并且一眼看过去就能明白意思呢？
-
-总而言之，C 标准库功能强大，它的重要性和语言本身一样。学会使用标准库，让你少造轮子，提高代码的可读性、简洁性和正确性。
-
-### 标准库里有什么？
-
-在你的印象中，标准库是什么样的？里面有什么东西？
-
-每一个标准库会定义这些内容：
-
-- 类型定义
-- 宏
-- 函数
-
-> 几个耳熟能详的例子，你能说说它们是什么吗？
->
-> - `NULL`、`EOF`
-> - `printf`、`scanf`
-> - `FILE`
-
-接下来的每一节是一个标准库，会分为**背景、内容、使用**三个部分。其中「背景」部分会介绍一些前置知识，「内容」部分会介绍标准库中的内容，「使用」部分会介绍一些使用的例子。「内容」 模块中代码段内被注释掉的内容，表示不作要求。
-
-### 背景知识
-
-为了能跟上接下来的内容，确认一下大家都有的知识：
-
-- 会阅读函数原型 / 函数声明 / 函数签名（它们说的是一个东西）：
-
-   ```c
-int main(void);
-  ```
-
-- [指针](https://ckc-agc.bowling233.top/programming/topic/pointers/) 的概念
-
-  - 内存、内存地址、对象
-
-  - 指针也是一个对象，它的值是一个内存地址
-
-  - 指针具有类型信息，决定了指针的运算方式
-
-  - 数组与指针
-
-  - 多维数组比较复杂
-
-## `<ctype.h>`
-
-头文件 `<ctype.h>` 声明了几个可以用于**识别和转换字符**的函数。
-
-### 背景：ASCII 字符集
-
-ASCII 字符集中的数字和字母大家应该都很熟了，这边再对两类大家接触比较少的字符分类简单做个介绍。
-
-- 打印字符：`0x20` ~ `0x7E`
-- 控制字符：`0x00` ~ `0x1F`和 `0x7F`
-
-### 内容
-
-这个头文件中只有函数，没有特别的类型和宏。
-
-这些函数的意义和用法非常显然，因此我也不做注释。
-
-- 字符判断函数
-
-  ```c
-  int isalnum(int c);
-  int isalpha(int c);
-  // int iscntrl(int c);
-  int isdigit(int c);
-  // int isgraph(int c);
-  int islower(int c);
-  // int isprint(int c);
-  // int ispunct(int c);
-  int isspace(int c);
-  int isupper(int c);
-  // int isxdigit(int c);
-  ```
-
-- 字符转换函数
-
-  ```c
-  int tolower(int c);
-  int toupper(int c);
-  ```
-
-### 使用
-
-`<ctype.h>` 中的函数对 ASCII 字符大致作了如下划分：
-
-控制字符那些不用管，不要求的函数不用管。只要记得 `isspace` 和 `isblank` 的区别就行了。
-
-
-
-`isspace` 和 `isblank` 的区别
-
-- **空格**字符：`isblank` 仅判断空格 ` `和水平制表符 `\t`。
-- **空白**字符：`isspace` 判断空格 `、`水平制表符 `\t`、换行符 `\n`、回车符 `\r`、换页符 `\f`、垂直制表符 `\v`。
-
-### `<ctype.h>` 的实现：宏与位运算
-
-阅读本节需要具备的知识
-
-- 位运算
-
-知道可以用位来标志某些状态。与或非等位运算的概念。
-
-- 宏
-
-知道宏函数是怎么展开的。
-
-
-
-`<ctype.h>` 中的函数通常使用宏来实现。使用宏实现时需要注意以下因素：
-
-- 虽然宏可能比函数快，但是它们通常会产生更大的代码。如果在很多地方扩展，这个程序可能大到让你无法想象。
-
-- 宏的参数可能会被求值多次，具有副作用的宏参数会导致意外。
-
-  > 举个例子
-
-  ```
-  #define SQUARE(X) ((X) * (X))
-  SQUARE(x++); // x++ * x++
-  ```
-
-  使用者以为它只会让 `x` 自增一次，但是实际上它会让 `x` 自增两次。
-
-  > 会产生不安全行为的宏
-  >
-  > 标准库中，只有 `getc` 和 `putc` 可能会产生这种不安全行为。
-
-`<ctype.h>` 中定义了一个查找表 `_Ctype`，两个映射表 `_Tolower` 和 `_Toupper`。每个字符都被编入查找表中，使用位运算就能判断出字符的类型。
-
-**ctype.h**
-
-```
-#define _DI 0x20 /* '0'-'9' */
-#define _LO 0x10 /* 'a'-'z' */
-#define _UP 0x02 /* 'A'-'Z' */
-#define _XA 0x200 /* 'a'-'z', 'A'-'Z' */
-extern const short *_Ctype, *_Tolower, *_Toupper;
-#define isalnum(c) (_Ctype[(int)(c)] & (_DI|_LO|_UP|_XA))
-#define tolower(c) _ToLower[(int)(c)]
-```
-
-
-
-**isalnum.c**
-
-```
 #include <ctype.h>
+#include <string.h>
 
-int isalnum(int c)
-    { /* test for alphanumeric character */
-    return (_Ctype[c] & (_DI|_LO|_UP|_XA));
+void to_upper(char *str) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = toupper(str[i]);
     }
+}
 ```
 
+通过使用 `<ctype.h>` 中的函数，我们可以更简洁、高效地完成字符处理任务。
 
-
-## `<math.h>`
+## 四、`<math.h>`：数学计算的强大支持
 
 ### 背景知识：函数的定义域与值域
 
-我们都知道数学函数有定义域和值域，`<math.h>` 中的函数也有，只是大家平常使用的时候可能不太关注罢了。
+在数学中，每个函数都有其定义域和值域，超出定义域的输入会导致函数无法计算，超出值域的结果可能无法表示。在 `<math.h>` 中的数学函数也是如此，需要注意输入参数的范围和结果的表示。
 
-- 如果函数的输入参数位于定义域外（比如 `asin` 输入了不在 [−1,1] 的值），会发生定义域错误。
-- 如果结果不能被表示为 `double` 值，发生值域错误。上溢返回 `HUGE_VAL`，下溢返回 `0`。
+### 函数内容
 
+`<math.h>` 提供了丰富的数学函数，例如：
 
+- **三角函数**：
+  - `sin(double x)`：计算正弦值。
+  - `cos(double x)`：计算余弦值。
+  - `tan(double x)`：计算正切值。
+- **指数与对数函数**：
+  - `exp(double x)`：计算自然指数 e 的 x 次方。
+  - `log(double x)`：计算自然对数。
+  - `log10(double x)`：计算以 10 为底的对数。
+- **幂函数**：
+  - `pow(double x, double y)`：计算 x 的 y 次方。
+- **绝对值与取整函数**：
+  - `fabs(double x)`：计算绝对值。
+  - `ceil(double x)`：向上取整。
+  - `floor(double x)`：向下取整。
 
-### 内容
+### 实际应用
 
-- 宏
+假设我们需要计算一个数的平方根，可以使用 `sqrt` 函数：
 
-  ```
-  HUGE_VAL
-  ```
+c复制
 
-  GCC 定义的宏
+```c
+#include <math.h>
 
-  ```
-  INFINITY
-  NAN
-  ```
-
-  上面这两个宏起初不在标准库中，由 GCC 定义。
-
-  > 据说在 C99 以后，`INFINITY` 被标准库纳入，我没有查证。
-
-- 函数（仅举一些常用的
-
-  ```
-  double acos(double x);
-  double asin(double x);
-  double atan(double x);
-  double cos(double x);
-  double sin(double x);
-  double tan(double x);
-  double exp(double x);
-  double log(double x);
-  double log10(double x);
-  double pow(double x, double y);
-  double sqrt(double x);
-  double ceil(double x);
-  double fabs(double x);
-  double floor(double x);
-  ```
-
-### 使用
-
-- 输入输出全都是 `double` 类型（注意隐式类型转换带来的影响）。
-
-- 三角函数均为弧度制。角度到弧度的转换公式为：�=�180×�。
-
-- 没有PI这个宏。
-
-  - 可以使用 `atan(1)*4` 代替。
-- GCC 定义了一些数值宏，它们都以 `M_` 开头，比如 `M_PI`。它们默认为 `double` 类型。如果你需要其他精度，可以添加 `l` 后缀，比如 `M_PIl`。
-
-## `<string.h>`
-
-### 背景知识：字符串
-
-**字符串**和**字符数组**一定要区别开来。字符串是以空字符 `\0` 结尾的字符数组。
-
-```
-char name[13] = "StudyTonight";
-char name[10] = {'c','o','d','e','\0'};
+double calculate_square_root(double num) {
+    return sqrt(num);
+}
 ```
 
-> `<string.h>` 的函数只负责操作字符串，不负责操作字符数组！
->
-> 还记得数组传入函数的时候会退化成指针吗？函数无法获知数组的长度，因此空字符是帮助函数判断字符串结束、避免越界的**唯一方法**。
->
-> 当然，`strn` 系列函数提供了指定长度的参数。
+通过使用 `<math.h>` 中的函数，我们可以轻松完成各种数学计算任务。
 
-### 内容
+## 五、`<string.h>`：字符串操作的高效工具
 
-- 类型
+### 背景知识：字符串与字符数组
 
-  ```
-  size_t
-  ```
+在 C 语言中，字符串是以空字符 `\0` 结尾的字符数组。字符串操作是编程中常见的任务之一，`<string.h>` 提供了一系列用于字符串操作的函数。
 
-- 宏
+### 函数内容
 
-  ```
-  NULL
-  ```
+`<string.h>` 提供了多种字符串操作函数，例如：
 
-- 函数
+- **复制函数**：
+  - `strcpy(char *dest, const char *src)`：将 `src` 字符串复制到 `dest`。
+  - `strncpy(char *dest, const char *src, size_t n)`：将 `src` 的前 `n` 个字符复制到 `dest`。
+- **连接函数**：
+  - `strcat(char *dest, const char *src)`：将 `src` 字符串连接到 `dest`。
+  - `strncat(char *dest, const char *src, size_t n)`：将 `src` 的前 `n` 个字符连接到 `dest`。
+- **比较函数**：
+  - `strcmp(const char *s1, const char *s2)`：比较两个字符串。
+  - `strncmp(const char *s1, const char *s2, size_t n)`：比较两个字符串的前 `n` 个字符。
+- **查找函数**：
+  - `strchr(const char *s, int c)`：查找字符 `c` 在字符串 `s` 中的第一次出现位置。
+  - `strstr(const char *s1, const char *s2)`：查找字符串 `s2` 在字符串 `s1` 中的第一次出现位置。
+- **其他函数**：
+  - `memset(void *s, int c, size_t n)`：将 `s` 的前 `n` 个字节设置为 `c`。
+  - `strlen(const char *s)`：计算字符串 `s` 的长度。
 
-  - 复制函数
+### 实际应用
 
-    ```
-    void *memcpy(void *dest, const void *src, size_t n);
-    void *memmove(void *dest, const void *src, size_t n);
-    char *strcpy(char *dest, const char *src);
-    char *strncpy(char *dest, const char *src, size_t n);
-    ```
+假设我们需要将两个字符串连接起来，可以使用 `strcat` 函数：
 
-  - 连接函数
+c复制
 
-    ```
-    char *strcat(char *dest, const char *src);
-    char *strncat(char *dest, const char *src, size_t n);
-    ```
+```c
+#include <string.h>
 
-  - 比较函数
+void concatenate_strings(char *dest, const char *src) {
+    strcat(dest, src);
+}
+```
 
-    ```
-    int memcmp(const void *s1, const void *s2, size_t n);
-    int strcmp(const char *s1, const char *s2);
-    int strncmp(const char *s1, const char *s2, size_t n);
-    ```
+通过使用 `<string.h>` 中的函数，我们可以高效地完成字符串操作任务。
 
-  - 查找函数
+## 六、`<stdlib.h>`：通用工具函数的集合
 
-    ```
-    void *memchr(const void *s, int c, size_t n);
-    char *strchr(const char *s, int c);
-    // size_t strcspn(const char *s1, const char *s2);
-    // char *strpbrk(const char *s1, const char *s2);
-    // char *strrchr(const char *s, int c);
-    // size_t strspn(const char *s1, const char *s2);
-    char *strstr(const char *s1, const char *s2);
-    // char *strtok(char *s1, const char *s2);
-    ```
+### 函数内容
 
-  - 其他函数
+`<stdlib.h>` 提供了一系列通用的工具函数，例如：
 
-    ```
-    void *memset(void *s, int c, size_t n);
-    // char *strerror(int errnum);
-    size_t strlen(const char *s);
-    ```
+- **随机数生成函数**：
+  - `rand()`：生成一个随机整数。
+  - `srand(unsigned int seed)`：设置随机数种子。
+- **整数算术函数**：
+  - `abs(int n)`：计算整数的绝对值。
+  - `div(int numer, int denom)`：计算整数的商和余数。
+- **查找与排序函数**：
+  - `qsort(void *base, size_t n, size_t size, int (*compar)(const void *, const void *))`：对数组进行排序。
+- **文本转换函数**：
+  - `atoi(const char *str)`：将字符串转换为整数。
+  - `atof(const char *str)`：将字符串转换为浮点数。
+- **内存管理函数**：
+  - `malloc(size_t size)`：分配指定大小的内存。
+  - `free(void *ptr)`：释放已分配的内存。
+  - `calloc(size_t nobj, size_t size)`：分配并初始化内存。
+  - `realloc(void *ptr, size_t size)`：重新分配内存大小。
 
-### 使用
+### 实际应用
 
-使用前，自己计算字符串长度和剩余空间，这是编程者的责任。或者使用带 `n` 的函数。
+假设我们需要生成一个随机数，可以使用 `rand` 函数：
 
-- 有些函数可能返回空指针，记得测试返回的指针。
+c复制
 
-## `<stdlib.h>`
+```c
+#include <stdlib.h>
 
-头文件 `<stdlib.h>` 是一个大杂烩，为了定义和声明那些没有明显归属的宏和函数。我们仅介绍常用的部分：整形数学、算法、文本转换、环境接口和存储分配。
+int generate_random_number() {
+    return rand();
+}
+```
 
-### 内容
+通过使用 `<stdlib.h>` 中的函数，我们可以完成各种通用任务，如随机数生成、内存管理等。
 
-- 宏
+## 七、`<stdio.h>`：文件输入输出的核心
 
-  ```
-  RAND_MAX
-  EXIT_FAILURE
-  EXIT_SUCCESS
-  ```
+### 背景知识：流的概念
 
-- 函数
+在 C 语言中，输入输出设备被抽象为流，流是字符序列。`<stdio.h>` 提供了用于文件输入输出的函数，支持文本流和二进制流。
 
-  - 伪随机序列产生函数
+### 函数内容
 
-    ```
-    int rand(void);
-    void srand(unsigned int seed);
-    ```
+`<stdio.h>` 提供了多种文件输入输出函数，例如：
 
-  - 整数算术函数
+- **文件操作函数**：
+  - `fopen(const char *filename, const char *mode)`：打开文件。
+  - `fclose(FILE *stream)`：关闭文件。
+- **格式化输入输出函数**：
+  - `fprintf(FILE *stream, const char *format, ...)`：向文件写入格式化数据。
+  - `fscanf(FILE *stream, const char *format, ...)`：从文件读取格式化数据。
+- **字符输入输出函数**：
+  - `fgetc(FILE *stream)`：从文件读取一个字符。
+  - `fputc(int c, FILE *stream)`：向文件写入一个字符。
 
-    ```
-    int abs(int n);
-    div_t div(int numer, int denom);
-    long labs(long n);
-    ldiv_t ldiv(long numer, long denom);
-    ```
+### 实际应用
 
-  - 查找和排序函数
+假设我们需要读取一个文件的内容，可以使用 `fopen` 和 `fgetc` 函数：
 
-    ```
-    void *bsearch(const void *key, const void *base, size_t n, size_t size, int (*compar)(const void *, const void *));
-    void qsort(void *base, size_t n, size_t size, int (*compar)(const void *, const void *));
-    ```
+c复制
 
-  - 文本转换（好用的）
+```c
+#include <stdio.h>
 
-    ```
-    double atof(const char *str);
-    int atoi(const char *str);
-    long atol(const char *str);
-    double strtod(const char *str, char **endptr);
-    long strtol(const char *str, char **endptr, int base);
-    unsigned long strtoul(const char *str, char **endptr, int base);
-    ```
+void read_file(const char *filename) {
+    FILE *file = fopen(filename, "r");
+    if (file == NULL) {
+        printf("Failed to open file.\n");
+        return;
+    }
 
-  - 环境通信（不介绍）
+    int ch;
+    while ((ch = fgetc(file)) != EOF) {
+        putchar(ch);
+    }
 
-    ```
-    // void abort(void);
-    // int atexit(void (*func)(void));
-    // void exit(int status);
-    // char *getenv(const char *name);
-    // int system(const char *string);
-    ```
+    fclose(file);
+}
+```
 
-  - 内存管理（重难点）
+通过使用 `<stdio.h>` 中的函数，我们可以轻松完成文件输入输出任务。
 
-    ```
-    void *calloc(size_t nobj, size_t size);
-    void free(void *ptr);
-    void *malloc(size_t size);
-    void *realloc(void *ptr, size_t size);
-    ```
+## 八、总结
 
-    > 注意，内存拷贝函数却在 `<string.h>` 中。
-
-- 类型
-
-  ```
-  div_t // int quot, rem;
-  ldiv_t // long quot, rem;
-  ```
-
-### 使用
-
-- `rand` 和 `srand` 用于产生伪随机数。`srand` 用于设置随机数种子，`rand` 用于产生随机数。`rand` 产生的随机数范围是 [0,����_���]。
-
-- `abs` 和 `labs` 用于求绝对值。`div` 和 `ldiv` 用于求商和余数。
-
-- qsort的用例：
-  
-  ```
-  int cmpfunc (const void * a, const void * b) {
-      return ( *(int*)a - *(int*)b );
-  }
-  qsort(values, 5, sizeof(int), cmpfunc);
-  ```
-  
-- 文本转换函数非常好用。你再也不用写这样的代码了（当然atoi函数的具体实现要比这复杂得多）：
-
-  ```
-  int atoi(char *str) {
-      int res = 0;
-      for (int i = 0; str[i] != '\0'; ++i)
-          res = res * 10 + str[i] - '0';
-      return res;
-  }
-  ```
-  
-- `malloc` 记得参数是**字节数**，千万记得乘上 `sizeof`。为了防止自己忘记，也可以坚持使用 `calloc`。且它会自动初始化内存为 0。
-
-- `realloc` 相当于结合了 `malloc`、`memcpy` 和 `free` 的功能。
-
-## `<stdio.h>`
-
-关于文件输入输出 ......
-
-这边列出了文件输入输出的内容，给大家复习的时候参考用。咱们这节课不讲。
-
-### 背景知识：流
-
-#### 流的概念
-
-各种输入输出设备实在是太多了（终端、磁带驱动器、结构化存储设备 ......）。为了统一概念，C 语言中的输入和输出设备全都和逻辑数据**流**相对应。
-
-> 流就是字符序列。
->
-> 不管系统、硬件是怎么实现的。输入输出到了 C 程序这里，就统一为逻辑上的**流**了。
->
-> 流关联到一个特定的文件。
-
-#### 操作系统中的文件
-
-计算机系统中的文件可以分为两类：
-
-- 文本文件：如果一个文件中的二进制值都是用来表示字符的，那么这个文件就是文本文件。
-- 二进制文件：如果一个文件中的二进制值代表其他数据，比如机器语言代码或者数值数据、图片或音乐，这个文件就是二进制文件。
-
-二进制文件存储的内容比较复杂，操作系统不敢随意变动。但文本文件内容简单，各类操作系统早就有了自己的处理方式。
-
-即使到今天，不同操作系统处理文本文件的方式仍然具有差异。
-
-| 差异       | UNIX        | Windows     | MacOS                             |
-| :--------- | :---------- | :---------- | :-------------------------------- |
-| 换行符     | `\n` LF     | `\r\n` CRLF | `\n` ( 较早的 MacOS 使用`\r` ) LF |
-| 文件结束符 | `^D` Ctrl+D | `^Z` Ctrl+Z | `^D` Ctrl+D                       |
-
-> 都是历史的锅！
->
-> 甚至有的操作系统这样处理文本文件：
->
-> - 要求文本文件中每一行的长度相同，否则用空白字符填充。
-> - 在每行开始标出行的长度。
-
-#### 流的类型
-
-C 语言提供两种流：文本流和二进制流。
-
-- 文本流：程序所见的内容可能和实际内容不同。如果将文件以文本模式打开，那么在读取文件时，会把本地环境表示的换行符或文件结尾映射为 C 语言中的 `\n` 和 `EOF`。
-- 二进制流：程序所见的内容和实际内容一致。如果将文件以二进制模式打开，那么在读取文件时，会把文件中的每一个字节都映射为 C 语言中的 `char`。
-
-### 内容
-
-- 类型
-
-  ```
-  size_t
-  FILE
-  fpos_t
-  ```
-
-- 宏
-
-  ```
-  stderr
-  stdin
-  stdout
-  NULL
-  EOF
-  SEEK_CUR
-  SEEK_END
-  SEEK_SET
-  // BUFSIZ
-  // FOPEN_MAX
-  // FILENAME_MAX
-  ```
-
-- 函数
-
-  - 文件操作函数（不做要求）
-
-    ```
-    // int remove(const char *filename);
-    // int rename(const char *old, const char *new);
-    // FILE *tmpfile(void);
-    ```
-
-  - 文件访问函数
-
-    ```
-    int fclose(FILE *stream);
-    // int fflush(FILE *stream);
-    FILE *fopen(const char *filename, const char *mode);
-    FILE *freopen(const char *filename, const char *mode, FILE *stream);
-    // void setbuf(FILE *stream, char *buf);
-    // int setvbuf(FILE *stream, char *buf, int mode, size_t size);
-    ```
-
-  - 格式化的输入输出函数
-
-    ```
-    int fprintf(FILE *stream, const char *format, ...);
-    int fscanf(FILE *stream, const char *format, ...);
-    int printf(const char *format, ...);
-    int scanf(const char *format, ...);
-    int sprintf(char *str, const char *format, ...);
-    int sscanf(const char *str, const char *format, ...);
-    // int vfprintf(FILE *stream, const char *format, va_list arg);
-    ```
-
-  - 字符输入输出函数
-
-    ```
-    // int fgetc(FILE *stream);
-    // char *fgets(char *str, int n, FILE *stream);
-    // int fputc(int c, FILE *stream);
-    int fputs(const char *str, FILE *stream);
-    // int getc(FILE *stream);
-    int getchar(void);
-    // char *gets(char *str);
-    // int putc(int c, FILE *stream);
-    int putchar(int c);
-    int puts(const char *str);
-    // int ungetc(int c, FILE *stream);
-    ```
-
-  - 直接输入输出函数（考试不管）
-
-    ```
-    size_t fread(void *ptr, size_t size, size_t nobj, FILE *stream);
-    size_t fwrite(const void *ptr, size_t size, size_t nobj, FILE *stream);
-    ```
-
-  - 文件定位函数（考试不管）
-
-    ```
-    //int fgetpos(FILE *stream, fpos_t *pos);
-    int fseek(FILE *stream, long offset, int origin);
-    //int fsetpos(FILE *stream, const fpos_t *pos);
-    long ftell(FILE *stream);
-    void rewind(FILE *stream);
-    ```
-
-  - 错误处理函数（不做要求）
-
-    ```
-    // void clearerr(FILE *stream);
-    // int feof(FILE *stream);
-    // int ferror(FILE *stream);
-    // void perror(const char *str);
-    ```
-
-### 使用
-
-以下是课内内容，仅列出，不做详细介绍：
-
-- `printf`/ `scanf`这几个格式化输入 / 输出函数的使用。
-
-- `%d`、`%p` 等转换说明的使用。
-
-- `\n`、`\r` 等常见转义序列的使用。
-
-- 基本的打开、关闭文件 `fopen`、`fclose` 的使用。
-
-- `r`、`w`、`a`、`b` 等模式的使用。
-
-- 在一个FILE中用fscanf fprintf读写数据。
-
-  - `fread` 和 `fwrite` 课上应该会讲，但是编程也不会要求的。
-
-下面对几个知识点作一点规范介绍：
-
-转换说明
-
-规范的说明请看这里：
-
-- [`printf`](https://zh.cppreference.com/w/c/io/fprintf)
-- [`scanf`](https://zh.cppreference.com/w/c/io/fscanf)
-
-
-
-普遍误区
-
-针对同学们普遍的误区做几点强调说明：
-
-- scanf
-  
-  - `%s` 只读取非空白字符，遇到空白字符就结束。
-  - `%c` 只读取一个字符，遇到空白字符也会读取。
-  
-  还记得上面 `<ctype.h>` 刚刚讲的空白字符吗？
-
-  - 如果转换与字符匹配失败，**这个输入字符会留在输入流中**。在你下一次读取字符时，它可能会捣乱！
-  - 这个函数的参数是什么类型？什么时候该加取值符 `&`？
-
-输入输出函数的返回值
-
-大家平常使用可能不太关注。但还是有考察的可能：
-
-- printf、fprintf、sprintf、snprintf
-  - 正常：返回传输的字符数
-  - 异常：返回负数
-
-- scanf、fscanf、sscanf
-  - 正常：返回成功匹配并赋值的输入项数
-  - 异常：返回 `EOF`
+C 标准库中的初等基本函数为我们提供了强大的工具支持，涵盖了字符处理、数学计算、字符串操作、通用工具和文件输入输出等多个方面。学会使用这些函数，不仅可以提高我们的编程效率，还能让代码更加简洁、高效和可读。希望本文能帮助你更好地理解和应用 C 标准库中的初等基本函数。

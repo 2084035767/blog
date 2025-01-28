@@ -13,8 +13,6 @@ tags:
 
 # NPX 使用
 
-![](https://cdn.jsdelivr.net/gh/ruanyf/blog-images/2017/npx.jpg)
-
 自 npm 5.2 版本起，一个强大的工具 `npx` 悄然登场。它不仅简化了开发流程，还解锁了许多高阶玩法。本文将深入探讨 npx 的核心使用场景，带你领略这个工具的真正威力。
 
 ---

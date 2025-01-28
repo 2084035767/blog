@@ -7,313 +7,211 @@ tags:
   - Yaml
 ---
 
-## 简介
+# YAML 语言简明教程：从入门到应用
 
-YAML 是 "YAML Ain't a Markup Language"（YAML 不是一种标记语言）的递归缩写。在开发的这种语言时，YAML 的意思其实是："Yet Another Markup Language"（仍是一种标记语言）。
+---
 
-YAML 的语法和其他高级语言类似，并且可以简单表达清单、散列表，标量等数据形态。它使用空白符号缩进和大量依赖外观的特色，特别**适合用来表达或编辑数据结构、各种配置文件、倾印调试内容、文件大纲**（例如：许多电子邮件标题格式和YAML非常接近）。
+## 什么是 YAML？
 
-YAML 的配置文件后缀为 **.yml**，如：**runoob.yml** 。
+YAML（**YAML Ain't a Markup Language**）是一种专注于数据序列化的轻量级语言。尽管其名称最初是“Yet Another Markup Language”，但现在的递归缩写更强调其非标记语言的特性。YAML 以简洁的语法和易读性著称，常用于配置文件（如 Docker Compose、Kubernetes、CI/CD 工具）、数据交换和复杂结构的表达。
 
-> yaml常用来用作配置文件，和json类似
+---
 
-## 基本语法
+## 为什么选择 YAML？
 
-- 大小写敏感
-- 使用缩进表示层级关系
-- 缩进不允许使用tab，只允许空格
-- 缩进的空格数不重要，只要相同层级的元素左对齐即可
-- '#'表示注释
+1. **简洁直观**：通过缩进和符号（如 `-`、`:`）即可表达复杂数据结构，无需冗余符号。  
+2. **跨语言支持**：几乎所有主流编程语言（Python、Java、JavaScript 等）都有成熟的 YAML 解析库。  
+3. **适用场景广泛**：  
+   - 配置文件（如 `.gitlab-ci.yml`、`docker-compose.yml`）。  
+   - 数据序列化与传输。  
+   - 动态生成模板（如 Ansible Playbooks）。
 
-## 数据类型
+---
 
-YAML 支持以下几种数据类型：
+## 基础语法与核心规则
 
-- **对象**：键值对的集合，又称为映射（mapping）/ 哈希（hashes） / 字典（dictionary）
-- **数组**：一组按次序排列的值，又称为序列（sequence） / 列表（list）
-- **纯量**（scalars）：单个的、不可再分的值
+1. **大小写敏感**：`key` 和 `Key` 表示不同的键。  
+2. **缩进规则**：  
+   - 使用空格（**禁止 Tab**）。  
+   - 同级元素左对齐，缩进空格数不限。  
+3. **注释**：以 `#` 开头。  
+4. **键值分隔**：冒号 `:` 后必须加空格，如 `name: John`。
 
-## YAML 对象
+---
 
-::: warning 
+## 数据类型详解
 
-冒号后面要加一个空格
+### 1. 对象（映射）
+表示键值对集合，支持多种写法：  
+```yaml
+# 单行写法
+person: {name: Alice, age: 30}
 
-:::
+# 多行缩进
+person:
+  name: Alice
+  age: 30
 
-对象的几种表示形式：
+# 复杂键（使用 ? 标记）
+? [key1, key2]
+: [value1, value2]
+```
 
-1、对象键值对使用冒号结构表示，
+### 2. 数组（序列）
+以 `-` 开头的行表示数组元素：  
+```yaml
+# 简单数组
+fruits:
+  - Apple
+  - Banana
+
+# 多维数组（行内写法）
+matrix: [[1, 2], [3, 4]]
+
+# 对象数组
+users:
+  - name: Bob
+    role: admin
+  - name: Eve
+    role: guest
+```
+
+### 3. 纯量（标量）
+不可再分的基本值类型：  
+- **字符串**：默认不加引号，含特殊字符时可用单/双引号包裹。  
+- **布尔值**：`true`/`false`（不区分大小写）。  
+- **数值**：整数、浮点数（支持科学计数法 `6.852e+5`）。  
+- **空值**：用 `null` 或 `~` 表示。  
+- **日期与时间**：遵循 ISO 8601 格式，如 `2023-10-05T14:30:00+08:00`。
 
 ```yaml
-key: value
+example:
+  string: Hello World
+  boolean: true
+  float: 3.14
+  timestamp: 2023-10-05T14:30:00+08:00
+  empty: ~
 ```
 
-2、也可以使用
+### 4. 多行文本处理
+- `|` 保留换行符：  
+  ```yaml
+  message: |
+    Line 1
+    Line 2
+  ```
+  输出：`"Line 1\nLine 2\n"`  
 
+- `>` 折叠换行符为空格：  
+  ```yaml
+  message: >
+    Line 1
+    Line 2
+  ```
+  输出：`"Line 1 Line 2\n"`  
+
+---
+
+## 高级特性
+
+### 1. 类型强制转换
+使用 `!!` 强制指定类型：  
 ```yaml
-key: {child-key1:value1,child-key2:value2}
+port: !!str 8080  # 将整数转为字符串
+enabled: !!str true  # 将布尔值转为字符串
 ```
 
-3、还可使用缩进表示层级关系；
-
+### 2. 锚点与别名
+通过 `&` 定义锚点，`*` 引用别名，`<<` 合并数据：  
 ```yaml
-key: 
-    child-key1: value1
-    child-key2: value2
+defaults: &base-config
+  timeout: 30
+  retry: 3
+
+production:
+  <<: *base-config  # 合并锚点内容
+  endpoint: api.example.com
+
+# 等效于：
+production:
+  timeout: 30
+  retry: 3
+  endpoint: api.example.com
 ```
 
-同2，只是表示形式不同。
+---
 
-4、较为复杂的对象格式，可以使用问号加一个空格代表一个复杂的 key，配合一个冒号加一个空格代表一个 value：
+## 实际应用示例
 
+### 场景 1：Docker Compose 配置
 ```yaml
-?  
-    - complexkey1
-    - complexkey2
-:
-    - complexvalue1
-    - complexvalue2
+version: "3.8"
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    environment:
+      - DEBUG=true
+  db:
+    image: postgres:13
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
 ```
 
-意思即对象的属性是一个数组 [complexkey1,complexkey2]，对应的值也是一个数组 [complexvalue1,complexvalue2]
-
-## YAML 数组
-
-以 **-** 开头的行表示构成一个数组：
-
+### 场景 2：Kubernetes 部署文件
 ```yaml
-- A
-- B
-- C
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
 ```
 
-YAML 支持多维数组，可以使用行内表示：
+---
 
-```yaml
-key: [value1, value2, ...]
-```
+## YAML vs. JSON
 
-数据结构的子成员是一个数组，则可以在该项下面缩进一个空格。
+| 特性         | YAML                       | JSON                 |
+| ------------ | -------------------------- | -------------------- |
+| **可读性**   | 高（依赖缩进与符号）       | 较低（依赖括号逗号） |
+| **注释**     | 支持                       | 不支持               |
+| **数据类型** | 更丰富（日期、多行文本等） | 基础类型             |
+| **适用场景** | 配置文件、复杂结构         | API 数据交换         |
 
-```yaml
--
- - A
- - B
- - C
-```
+---
 
-一个相对复杂的例子：
+## 常见问题与陷阱
 
-```yaml
-companies:
-    -
-        id: 1
-        name: company1
-        price: 200W
-    -
-        id: 2
-        name: company2
-        price: 500W
-```
+1. **缩进错误**：混合 Tab 和空格会导致解析失败。  
+2. **冒号遗漏空格**：`key:value` 无效，应为 `key: value`。  
+3. **布尔值混淆**：`yes`/`no` 可能被误判为字符串，建议统一用 `true`/`false`。  
 
-意思是 companies 属性是一个数组，每一个数组元素又是由 id、name、price 三个属性构成。
+---
 
-数组也可以使用流式(flow)的方式表示：
+## 学习资源
 
-```yaml
-companies: [{id: 1,name: company1,price: 200W},{id: 2,name: company2,price: 500W}]
-```
+- **官方文档**：[yaml.org](https://yaml.org/)  
+- **在线解析工具**：[YAML to JSON Converter](https://www.json2yaml.com/)  
+- **深入教程**：[阮一峰 YAML 教程](https://www.ruanyifeng.com/blog/2016/07/yaml.html)  
 
-## 复合结构（对象和数组组合）
+---
 
-数组和对象可以构成复合结构，例：
-
-```yaml
-languages:
-  - Ruby
-  - Perl
-  - Python 
-websites:
-  YAML: yaml.org 
-  Ruby: ruby-lang.org 
-  Python: python.org 
-  Perl: use.perl.org
-```
-
-
-
-转换为 js 为：
-
-```yaml
-{ 
-  languages: [ 'Ruby', 'Perl', 'Python'],
-  websites: {
-    YAML: 'yaml.org',
-    Ruby: 'ruby-lang.org',
-    Python: 'python.org',
-    Perl: 'use.perl.org' 
-  } 
-}
-```
-
-## 纯量
-
-纯量是最基本的，不可再分的值，包括：
-
-- 字符串
-- 布尔值
-- 整数
-- 浮点数
-- Null
-- 时间
-- 日期
-
-使用一个例子来快速了解纯量的基本使用：
-
-```yaml
-boolean: # 布尔值
-    - TRUE  #true,True都可以
-    - FALSE  #false，False都可以
-float: # 浮点数
-    - 3.14
-    - 6.8523015e+5  #可以使用科学计数法
-int: # 整数
-    - 123
-    - 0b1010_0111_0100_1010_1110    #二进制表示
-null: # Null
-    nodeName: 'node'
-    parent: ~  #使用~表示null
-string: # 字符串
-    - 哈哈 # 字符串默认不使用引号表示
-    - 'Hello world'  #可以使用双引号或者单引号包裹特殊字符
-    - newline
-      newline2    #字符串可以拆成多行，每一行会被转化成一个空格
-date:
-    - 2018-02-17    #日期必须使用ISO 8601格式，即yyyy-MM-dd
-datetime: 
-    -  2018-02-17T15:02:31+08:00    #时间使用ISO 8601格式，时间和日期之间使用T连接，最后使用+代表时区
-```
-
-多行字符串可以使用`|`保留换行符，也可以使用`>`折叠换行。
-
-```yaml
-this: |
-  Foo
-  Bar
-that: >
-  Foo
-  Bar
-```
-
-转为js代码如下。
-
-```json
-{ this: 'Foo\nBar\n', that: 'Foo Bar\n' }
-```
-
-`+`表示保留文字块末尾的换行，`-`表示删除字符串末尾的换行。
-
-```yaml
-s1: |
-  Foo
- 
-s2: |+
-  Foo
- 
- 
-s3: |-
-  Foo
-```
-
-转为json代码如下
-
-```json
-{ s1: 'Foo\n', s2: 'Foo\n\n\n', s3: 'Foo' }
-```
-
-字符串之中可以插入 HTML 标记。
-
-```yaml
-message: |
-  <p style="color: red">
-    段落
-  </p>
-```
-
-## 转换数据格式
-
-允许使用两个感叹号，强制转换数据类型。
-
-```yaml
-e: !!str 123
-f: !!str true
-```
-
-转换js结果同：
-
-```json
-{ e: '123', f: 'true' }
-```
-
-## 锚点引用
-
-**&** 锚点和< span class="marked">* 别名，可以用来引用:
-
-```yaml
-defaults: &defaults # 添加锚点
-  adapter:  postgres
-  host:     localhost
-
-development:
-  database: myapp_development
-  <<: *defaults # <<表示合并，*引用锚点
-
-test:
-  database: myapp_test
-  <<: *defaults # <<表示合并，*引用锚点
-```
-
-相当于:
-
-```yaml
-defaults:
-  adapter:  postgres
-  host:     localhost
-
-development:
-  database: myapp_development
-  adapter:  postgres
-  host:     localhost
-
-test:
-  database: myapp_test
-  adapter:  postgres
-  host:     localhost
-```
-
-**&** 用来建立锚点（defaults），**<<** 表示合并到当前数据，***** 用来引用锚点。
-
-下面是另一个例子:
-
-```yaml
-- &showell Steve 
-- Clark 
-- Brian 
-- Oren 
-- *showell 
-```
-
-转为js代码如下:
-
-```yaml
-[ 'Steve', 'Clark', 'Brian', 'Oren', 'Steve' ]
-```
-
-参考：
-
-yaml官网：[https://yaml.org/(opens new window)](https://yaml.org/)
-
-yaml与js的转换demo：[http://nodeca.github.io/js-yaml/(opens new window)](http://nodeca.github.io/js-yaml/)
-
-菜鸟教程：[https://www.ruanyifeng.com/blog/2016/07/yaml.html(opens new window)](https://www.ruanyifeng.com/blog/2016/07/yaml.html)
+掌握 YAML 能极大提升配置管理的效率。无论是开发、运维还是数据工程，它都是值得投入学习的实用工具。
