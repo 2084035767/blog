@@ -7,7 +7,7 @@ tags:
   - GitHub
 ---
 
-# GitHub Actions 入门指南：自动化你的开发流程
+# GitHub Actions 
 
 GitHub Actions 是 GitHub 提供的持续集成和持续交付（CI/CD）工具，允许开发者自动化构建、测试和部署流程。通过灵活的工作流配置，你可以根据代码仓库的特定事件（如推送、拉取请求等）触发自动化任务。本文将介绍 GitHub Actions 的核心概念、基本用法及实际示例。
 

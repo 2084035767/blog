@@ -18,8 +18,6 @@
 选择面包、添加配料、加热、添加配料等。所有的这些步骤都是有顺序的。
 我们用模板模式来实现这个用例。
 
-![模板模式类图](Template-Method-Design-Pattern-Example-620x406.png)
-
 - 我们定义了一个所有披萨实现的抽象类 ```Pizza``` 。 披萨店现在提供两种类型的披萨： ```SweetCornPizza``` 和 ```MexicanPizza``` 。这两个类均实现了 Pizza 这个类。
 - Pizza 类包含 ```chooseBread()```、```addIngredients()``` 抽象方法。每一个 Pizza 实现都会覆盖它们，提供指定的业务逻辑实现。
 - ```heating()```、```addTopinngs()``` 和 ```addCheese()``` 方法对于所有的Pizza都是通用的，因此他们使用的是父类中的实现。

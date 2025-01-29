@@ -19,6 +19,14 @@ categories:
 
 ## 简介
 
+> 来源《[Git 教程 | 菜鸟教程](https://www.runoob.com/git/git-tutorial.html)》
+
+Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。
+
+Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。
+
+Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。
+
 
 
 ## 连接配置
@@ -200,8 +208,6 @@ git branch -a
 
 #### 删除分支
 
-- 
-
 ```bash
 # 删除本地分支
 ## 注意：不能在当前分支删除当前分支，需要切换到别的分支才可以删除
@@ -229,7 +235,7 @@ git checkout -b 分支名
 
 `merge` 和 `rebase`的区别有待学习实践 😟
 
-- 🐔
+
 
 ```bash
 # 将其他分支合并到当前分支
