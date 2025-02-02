@@ -22,16 +22,9 @@ https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.ht
 配置微信登录所需配置项：
 
 ```yaml
-  wechat:
-    appid: ${sky.wechat.appid}
-    secret: ${sky.wechat.secret}
-    mchid: ${sky.wechat.mchid}
-    mchSerialNo: ${sky.wechat.mchSerialNo}
-    privateKeyFilePath: ${sky.wechat.privateKeyFilePath}
-    apiV3Key: ${sky.wechat.apiV3Key}
-    weChatPayCertFilePath: ${sky.wechat.weChatPayCertFilePath}
-    notifyUrl: ${sky.wechat.notifyUrl}
-    refundNotifyUrl: ${sky.wechat.refundNotifyUrl}
+wechat:
+	appid: ${sky.wechat.appid}
+	secret: ${sky.wechat.secret}
 ```
 
 

@@ -31,8 +31,28 @@ order: 7
 <style>
   .custom-block-poem {
     display: flex;
+    flex-wrap: wrap; /* 允许换行 */
   }
   .custom-block-poem div {
     flex: 1;
+    min-width: 300px; /* 设置最小宽度防止过窄 */
+  }
+
+  /* 平板样式 (768px 以下) */
+  @media (max-width: 768px) {
+    .custom-block-poem {
+      flex-direction: column;
+    }
+    .custom-block-poem div {
+      width: 100%;
+      flex: none;
+    }
+  }
+
+  /* 手机样式 (480px 以下) */
+  @media (max-width: 480px) {
+    .custom-block-poem div {
+      min-width: unset; /* 移除最小宽度限制 */
+    }
   }
 </style>
