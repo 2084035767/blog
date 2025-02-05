@@ -63,4 +63,14 @@ export default defineConfig({
       next: '下一篇',
     },
   },
+  // vite 配置,取消sass警告
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern',
+        },
+      },
+    },
+  },
 })

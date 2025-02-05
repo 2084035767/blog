@@ -7,15 +7,11 @@ tags:
   - Yaml
 ---
 
-# YAML 语言简明教程：从入门到应用
-
----
+# YAML 语言简明教程
 
 ## 什么是 YAML？
 
 YAML（**YAML Ain't a Markup Language**）是一种专注于数据序列化的轻量级语言。尽管其名称最初是“Yet Another Markup Language”，但现在的递归缩写更强调其非标记语言的特性。YAML 以简洁的语法和易读性著称，常用于配置文件（如 Docker Compose、Kubernetes、CI/CD 工具）、数据交换和复杂结构的表达。
-
----
 
 ## 为什么选择 YAML？
 
