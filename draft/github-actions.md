@@ -11,7 +11,7 @@ tags:
 
 GitHub Actions 是 GitHub 提供的持续集成和持续交付（CI/CD）工具，允许开发者自动化构建、测试和部署流程。通过灵活的工作流配置，你可以根据代码仓库的特定事件（如推送、拉取请求等）触发自动化任务。本文将介绍 GitHub Actions 的核心概念、基本用法及实际示例。
 
----
+
 
 ## 一、核心组件
 
@@ -120,7 +120,7 @@ jobs:
           dst_token: ${{ secrets.GITEE_TOKEN }}
 ```
 
----
+
 
 ## 四、实用技巧与资源
 
@@ -137,11 +137,7 @@ jobs:
 - [官方文档](https://docs.github.com/actions)：全面了解工作流语法与最佳实践。  
 - [GitHub 市场](https://github.com/marketplace?type=actions)：探索现成 Action。  
 
----
 
-## 五、总结
-
-GitHub Actions 通过灵活的 YAML 配置，将开发流程自动化变得简单高效。无论是基础的 CI/CD 流水线，还是复杂的跨平台同步，都能通过组合事件、任务和动作实现。掌握其核心概念后，开发者可以大幅提升协作效率，专注于核心业务逻辑的开发。
 
 ## 参考三三
 

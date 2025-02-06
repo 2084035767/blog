@@ -51,7 +51,7 @@ JavaScript 模块化经历了多个阶段的发展：
 
 随着 ES6 的普及，ES6 Module 成为了主流的模块化规范。现代前端框架（如 Vue、React、Angular）和工具链（如 Webpack、Rollup）都支持 ES6 Module，使得模块化开发更加标准化和便捷。
 
-------
+
 
 ## 1. ES6 模块化（大一统的模块化规范）
 
@@ -69,7 +69,7 @@ JavaScript 模块化经历了多个阶段的发展：
 - **默认导出**语法：`export default 默认导出的成员`
 - **默认导入**语法：`import 接收名称 from 模块标识符`
 
-JavaScript复制
+
 
 ```javascript
 // 当前文件模块为 m1.js
@@ -97,8 +97,6 @@ console.log(m1); // 打印输出：{ a: 10, c: 20 }
 - **按需导出**语法：`export let s1 = 10`
 - **按需导入**语法：`import { s1 } from '模块标识符'`
 
-JavaScript复制
-
 ```javascript
 // 当前文件模块为 m1.js
 
@@ -123,8 +121,6 @@ console.log(say); // 打印输出 [Function: say]
 
 有时候，我们只想单纯执行某个模块中的代码，而不关心模块中暴露的成员。此时，可以使用以下方式：
 
-JavaScript复制
-
 ```javascript
 // 当前文件模块为 m2.js
 
@@ -137,7 +133,7 @@ for (let i = 0; i < 3; i++) {
 import './m2.js';
 ```
 
-------
+
 
 ## 2. CommonJS 模块化
 
@@ -146,8 +142,6 @@ CommonJS 是 Node.js 中的模块化规范，主要用于服务器端开发。�
 ### CommonJS 的基本语法
 
 #### 1. 导出模块
-
-JavaScript复制
 
 ```javascript
 // 当前文件模块为 m1.js
@@ -165,8 +159,6 @@ module.exports = {
 
 #### 2. 导入模块
 
-JavaScript复制
-
 ```javascript
 // 导入模块
 const m1 = require('./m1.js');
@@ -174,7 +166,7 @@ const m1 = require('./m1.js');
 console.log(m1); // 打印输出：{ a: 10, c: 20 }
 ```
 
-------
+
 
 ## 3. AMD 模块化
 
@@ -183,8 +175,6 @@ AMD（Asynchronous Module Definition）是一种适用于浏览器端的异步�
 ### AMD 的基本语法
 
 #### 1. 定义模块
-
-JavaScript复制
 
 ```javascript
 // 当前文件模块为 m1.js
@@ -202,15 +192,13 @@ define(function () {
 
 #### 2. 加载模块
 
-JavaScript复制
-
 ```javascript
 require(['./m1.js'], function (m1) {
     console.log(m1); // 打印输出：{ a: 10, c: 20 }
 });
 ```
 
-------
+
 
 ## 4. CMD 模块化
 
@@ -220,11 +208,8 @@ CMD（Common Module Definition）是由 Sea.js 提出的模块化规范，适用
 
 #### 1. 定义模块
 
-JavaScript复制
-
 ```javascript
 // 当前文件模块为 m1.js
-
 define(function (require, exports, module) {
     let a = 10;
     let c = 20;
@@ -236,17 +221,13 @@ define(function (require, exports, module) {
 
 #### 2. 加载模块
 
-JavaScript复制
-
 ```javascript
 require.async('./m1.js', function (m1) {
     console.log(m1); // 打印输出：{ a: 10, c: 20 }
 });
 ```
 
-------
-
-## 5. 模块化规范的对比
+## 模块化规范的对比
 
 ### CommonJS vs. AMD vs. CMD vs. ES6 Module
 

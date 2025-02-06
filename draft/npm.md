@@ -1,6 +1,6 @@
 
 
-# npm：Node.js 包管理器的全面指南
+# npm
 
 ## 一、npm 简介
 

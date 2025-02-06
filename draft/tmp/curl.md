@@ -1,5 +1,5 @@
 ---
-title: 胡说| CURL 命令
+title: 胡说| CURL 命令基础使用
 date: 2022-8-26
 categories:
   - 编程知识
@@ -11,11 +11,11 @@ tags:
 
 :::
 
-# 掌握CURL命令：从基础到实战
+# CURL命令
 
 CURL（Client URL）是一个功能强大的命令行工具，用于通过URL传输数据，支持HTTP、HTTPS、FTP、SFTP等数十种协议。无论是调试API、下载文件，还是自动化脚本开发，CURL都是开发者不可或缺的利器。本文将系统讲解CURL的核心功能、常用参数及实战场景，助你快速上手。
 
----
+
 
 ## CURL简介
 
@@ -107,7 +107,7 @@ curl -H "Authorization: Bearer YOUR_TOKEN" https://api.example.com
    curl --limit-rate 100K -O https://example.com/large-file.zip
    ```
 
----
+
 
 ## 总结
 

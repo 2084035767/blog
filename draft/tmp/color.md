@@ -1,5 +1,5 @@
 ---
-title: 关于| 颜色的知识
+title: 关于| 颜色那些事
 date: 2022-8-26
 categories:
   - 知识科普
