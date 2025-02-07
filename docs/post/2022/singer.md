@@ -1,5 +1,5 @@
 ---
-title: 谈谈| 喜欢的歌手
+title: 随笔| 喜欢的歌手
 date: 2022-5-18
 password: 8dd54ee89a8bba1ca1863897dea45827
 categories:

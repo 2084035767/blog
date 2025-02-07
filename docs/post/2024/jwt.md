@@ -1,5 +1,5 @@
 ---
-title: 胡说| JWT 基础认识
+title: 关于| JWT 基础认识
 date: 2024-2-3
 categories:
   - 编程知识

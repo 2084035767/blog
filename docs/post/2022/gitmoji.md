@@ -1,5 +1,5 @@
 ---
-title: 关于| Gitmoji 简明使用
+title: 胡说| Gitmoji 简明使用
 date: 2022-10-24
 categories:
   - 知识科普

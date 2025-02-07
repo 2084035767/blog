@@ -1,5 +1,5 @@
 ---
-title: 关于| 搜索技巧
+title: 胡说| 搜索小技巧
 date: 2021-5-11
 categories: 
   - 知识科普

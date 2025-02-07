@@ -1,5 +1,5 @@
 ---
-title: 转载| CSS命名规范-BEM
+title: 转载| CSS命名规范
 date: 2021-7-16
 categories: 
   - 编程知识
