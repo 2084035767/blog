@@ -5,19 +5,17 @@ categories:
   - 知识了解
 ```
 
+单例模式
+
 :::tip 前言
 
 
 
 :::
 
-## 单例模式
+## 简介
 
 单例模式（Singleton ）保证一个类仅有一个实例，并提供一个访问它的全局访问点。
-
-
-
-
 
 单例有如下几个特点：
 
@@ -132,7 +130,7 @@ public class LazyInstanceSafe {
 }
 ```
 
-#### 
+
 
 #### 双重检查（线程安全，推荐）
 
@@ -190,6 +188,8 @@ private enum Singleton{
     private SingletonExample singleton;
 }
 ```
+
+
 
 ### 你知道吗？
 

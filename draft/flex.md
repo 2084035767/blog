@@ -1,3 +1,14 @@
+---
+title: 关于| flex 布局
+date: 2023-10-11
+categories:
+  - 编程知识
+tags:
+  - 计算机
+---
+
+
+
 # flex 语法部分
 
 ## 一、Flex

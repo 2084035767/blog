@@ -1,5 +1,5 @@
 ---
-title: 胡说| Axios的简单使用
+title: 胡说| Axios 简明使用
 date: 2025-1-1
 categories: 
   - 知识了解
@@ -146,8 +146,6 @@ axios(config).then(res => {})
 
 创建自定义实例
 
-
-
 ```javascript
 const instance = axios.create({
   baseURL: 'https://api.example.com',
@@ -162,7 +160,7 @@ instance({
 })
 ```
 
----
+
 
 ### 基础用法
 GET请求：  
@@ -303,10 +301,8 @@ axios.interceptors.response.use(
 
 
 
----
-
 ### 封装Axios
-```
+```js
 import axios from 'axios'
 
 export function request(config) {
@@ -320,7 +316,7 @@ export function request(config) {
 
 使用:
 
-```
+```js
 import {request} from "./network/request";
 
 request({

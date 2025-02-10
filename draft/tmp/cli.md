@@ -1,5 +1,5 @@
 ---
-title: 胡说| CLI 匠心制作
+title: 动手| CLI 匠心制作
 date: 2022-8-26
 categories:
   - 编程知识
@@ -92,9 +92,18 @@ if __name__ == "__main__":
 
 
 
-## 实战案例：开发一个 Markdown 转换工具
+## 实战案例：开发一个 Markdown 格式化工具
+
+
+
+
+
+
+
+
 
 ### 功能需求
+
 - 将 Markdown 文件转换为 HTML。
 - 支持自定义输出目录。
 - 显示转换耗时。
@@ -157,8 +166,3 @@ if __name__ == "__main__":
   - [命令行艺术](https://github.com/jlevy/the-art-of-command-line)
   - [Node.js CLI 最佳实践](https://www.twilio.com/blog/how-to-build-a-cli-with-node-js)
 
----
-
-## 结语
-
-CLI 工具的开发不仅是技术实践，更是对用户体验的深入思考。通过合理设计命令、优化交互细节，你可以打造出高效且受欢迎的命令行工具。无论是个人效率提升，还是团队协作，掌握 CLI 开发都将为你打开一扇新的大门。现在，动手实现你的第一个 CLI 项目吧！🚀

@@ -151,7 +151,7 @@ production:
   endpoint: api.example.com
 ```
 
-### 
+
 ## YAML vs. JSON
 
 | 特性         | YAML                       | JSON                 |

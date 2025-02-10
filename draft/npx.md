@@ -1,5 +1,5 @@
 ---
-title: 胡说| npx 简单使用
+title: 胡说| npx 简明使用
 date: 2023-10-11
 categories:
   - 编程知识
