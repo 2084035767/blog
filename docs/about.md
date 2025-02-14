@@ -4,7 +4,7 @@ layout: page
 
 > [!WARNING]
 >
-> 🚧建设中···
+> 🚧重建中···
 
 <!--<iframe  style="width:100%; height: 100vh;"  src="https://www.zishiaaa.shop/"  frameborder="0" loading="lazy"> </iframe>-->
 
