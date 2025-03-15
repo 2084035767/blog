@@ -1,6 +1,6 @@
 ---
 title: 书推|《蛤蟆先生去看心理医生》
-date: 2022-11-2
+date: 2025-5-2
 categories:
   - 书籍推荐
 tags:

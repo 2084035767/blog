@@ -1,6 +1,6 @@
 ---
 title: 随笔|《被时间带走了》
-date: 2022-5-21
+date: 2022-6-21
 categories:
   - 随笔感悟
 order: 6

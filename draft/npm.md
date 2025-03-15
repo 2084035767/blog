@@ -25,15 +25,11 @@ npm（Node Package Manager）是 Node.js 的包管理器，用于管理 JavaScri
 
 安装 Node.js 时，npm 会自动安装。但为了使用最新版的 npm，可以运行以下命令进行全局安装：
 
-bash复制
-
 ```bash
 npm install npm@latest -g
 ```
 
 查看当前安装的 npm 版本：
-
-bash复制
 
 ```bash
 npm -v
@@ -42,8 +38,6 @@ npm -v
 ### 3. 故障排除
 
 当包安装或发布失败时，npm 会生成 `npm-debug.log` 文件，帮助诊断问题。可以通过以下命令生成日志文件：
-
-bash复制
 
 ```bash
 npm install --timing
@@ -104,15 +98,11 @@ Git URL 形式的包可以是以下形式：
 
 `package.json` 文件是包的配置文件，包含包的元数据和依赖关系。可以通过以下命令创建：
 
-bash复制
-
 ```bash
 npm init
 ```
 
 或者使用 `--yes` 参数快速创建：
-
-bash复制
 
 ```bash
 npm init --yes
@@ -140,8 +130,6 @@ npm init --yes
 6. 在本地测试包。
 7. 发布包到 npm 服务器：
 
-bash复制
-
 ```bash
 npm publish
 ```
@@ -149,8 +137,6 @@ npm publish
 ### 4. 指定依赖包
 
 可以通过命令行或手动编辑 `package.json` 文件来添加依赖包。例如：
-
-bash复制
 
 ```bash
 npm install <package-name>
@@ -169,8 +155,6 @@ npm install <package-name> --save-dev
 
 可以使用 `--tag` 参数发布带有特定标签的包：
 
-bash复制
-
 ```bash
 npm publish --tag beta
 ```
@@ -181,8 +165,6 @@ npm publish --tag beta
 
 可以通过 npm 网站或命令行修改包的可见性。例如，将包设为私有：
 
-bash复制
-
 ```bash
 npm access restricted <package-name>
 ```
@@ -190,8 +172,6 @@ npm access restricted <package-name>
 ### 2. 给私有包添加协作者
 
 可以通过 npm 网站或命令行添加协作者：
-
-bash复制
 
 ```bash
 npm owner add <user> <my-package-name>
@@ -201,8 +181,6 @@ npm owner add <user> <my-package-name>
 
 更新 `package.json` 文件的版本号，可以使用以下命令：
 
-bash复制
-
 ```bash
 npm version <patch | minor | major>
 ```
@@ -211,15 +189,11 @@ npm version <patch | minor | major>
 
 弃用一个包：
 
-bash复制
-
 ```bash
 npm deprecate <package-name> "<message>"
 ```
 
 取消弃用：
-
-bash复制
 
 ```bash
 npm deprecate <package-name> ""
@@ -228,8 +202,6 @@ npm deprecate <package-name> ""
 ### 5. 将弃用的包转移给 npm 归档
 
 将包转移到 npm 官方账户：
-
-bash复制
 
 ```bash
 npm owner add npm <package-name>
@@ -240,8 +212,6 @@ npm owner rm <user> <package-name>
 
 将包转移给另一个用户：
 
-bash复制
-
 ```bash
 npm owner add <their-username> <package-name>
 npm owner rm <user> <package-name>
@@ -250,8 +220,6 @@ npm owner rm <user> <package-name>
 ### 7. 取消发布
 
 取消发布一个包：
-
-bash复制
 
 ```bash
 npm unpublish <package-name> -f
@@ -267,15 +235,11 @@ npm unpublish <package-name> -f
 
 安装包到本地项目：
 
-bash复制
-
 ```bash
 npm install <package_name>
 ```
 
 安装特定版本：
-
-bash复制
 
 ```bash
 npm install <package_name>@<version>
@@ -285,8 +249,6 @@ npm install <package_name>@<version>
 
 全局安装包：
 
-bash复制
-
 ```bash
 npm install -g <package_name>
 ```
@@ -294,8 +256,6 @@ npm install -g <package_name>
 ### 4. 更新本地安装的包
 
 更新项目依赖：
-
-bash复制
 
 ```bash
 npm update
@@ -305,8 +265,6 @@ npm update
 
 使用 `require()` 函数加载已安装的包：
 
-JavaScript复制
-
 ```javascript
 const lodash = require('lodash');
 ```
@@ -315,15 +273,11 @@ const lodash = require('lodash');
 
 卸载本地包：
 
-bash复制
-
 ```bash
 npm uninstall <package_name>
 ```
 
 卸载全局包：
-
-bash复制
 
 ```bash
 npm uninstall -g <package_name>
