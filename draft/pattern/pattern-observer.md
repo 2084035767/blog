@@ -96,8 +96,6 @@ JDK 对观察者模式提供了支持。下面举个观察者模式的例子。
 
 Comment 类代码：
 
-
-
 ```java
 public class Comment {
   /**
@@ -124,15 +122,11 @@ public class Comment {
 }
 Blog 类是被观察者对象，被观察者对象需要继承 JDK 的 Observable 类，继承后，被观察者对象包含如下属性和方法：
 
-QQ20200511-093515@2x
-
 这些方法都是线程安全方法（加了 synchronized 同步锁）。
 
 Blog 的 comment 方法中，当博客收到评论时，首先调用父类的 setChanged() 方法，设置标识位 changed = true，表示被观察者发生了改变；然后调用父类的 notifyObservers(Object) 方法通知所有观察者。
 
 被观察者对象创建好后，我们接着创建观察者。新建一个 Author 类：
-
-
 
 ```java
 public class Author implements Observer {
@@ -163,8 +157,6 @@ public void update(Observable o, Object arg) {
 
 新建一个客户端测试一下：
 
-
-
 ```java
 public class Application {
   public static void main(String[] args) {
@@ -181,6 +173,3 @@ public class Application {
 }
 程序输出如下：
 ```
-Scott 评论了 <Java 从入门到放弃> ，评论内容：感谢楼主的文章，让我及时放弃 Java，回家继承了千万家产。
-系统感知到 MrBird 撰写的博文 <Java 从入门到放弃> 收到了 Scott 的评论，评论内容为：感谢楼主的文章，让我及时放弃 Java，回家继承了千万家产。
-值得注意的是，观察者的 update 方法里的逻辑最好进行异步化，这样在并发环境下可以提升程序性能。

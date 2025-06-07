@@ -48,7 +48,7 @@ categories:
 ### 实现
 
 ```Java
-举个字符串校验的例子。新建一个字符串校验抽象类：
+// 举个字符串校验的例子。新建一个字符串校验抽象类：
 
 public abstract class StringValidator {
 
@@ -60,9 +60,9 @@ public abstract class StringValidator {
 
     public abstract void check(String value);
 }
-StringValidator 类包含了一个自身类型的成员变量，这也是该模式的设计核心，以此形成链条。
+// StringValidator 类包含了一个自身类型的成员变量，这也是该模式的设计核心，以此形成链条。
 
-创建一个校验字符串长度的类 StringLengthValidator：
+// 创建一个校验字符串长度的类 StringLengthValidator：
 
 public class StringLengthValidator extends StringValidator {
     @Override
@@ -77,9 +77,9 @@ public class StringLengthValidator extends StringValidator {
         }
     }
 }
-上面代码中，在字符串长度校验合法后，我们判断父类的 validator 属性是否为空，不为空则调用其 check 方法继续下一步校验。
+// 上面代码中，在字符串长度校验合法后，我们判断父类的 validator 属性是否为空，不为空则调用其 check 方法继续下一步校验。
 
-接着再新建一个校验字符串内容的类 StringValueValidator：
+// 接着再新建一个校验字符串内容的类 StringValueValidator：
 
 public class StringValueValidator extends StringValidator {
     @Override
@@ -94,7 +94,7 @@ public class StringValueValidator extends StringValidator {
         }
     }
 }
-套路和 StringLengthValidator 一样。接着创建一个客户端类，演示下如何让校验类形成一个链条：
+//套路和 StringLengthValidator 一样。接着创建一个客户端类，演示下如何让校验类形成一个链条：
 
 public class Application {
 
@@ -106,9 +106,8 @@ public class Application {
         lengthValidator.check("hello");
     }
 }
-上面代码中，通过 StringValidator 的 setNextValidator 方法，我们可以指定下一个校验类，以此形成链条，程序输出如下：
-
-字符串长度合法
-字符串值合法
+// 上面代码中，通过 StringValidator 的 setNextValidator 方法，我们可以指定下一个校验类，以此形成链条，程序输出如下：
+//字符串长度合法
+//字符串值合法
 
 ```
