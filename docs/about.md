@@ -8,9 +8,6 @@ layout: page
 
 <!--<iframe  style="width:100%; height: 100vh;"  src="https://www.zishiaaa.shop/"  frameborder="0" loading="lazy"> </iframe>-->
 
-
-<div v-if="0">
-
 ## 关于博客
 
 
@@ -83,6 +80,4 @@ layout: page
 梦想是<span style="filter: blur(4px);user-select:none;">做出一部堪比“火影忍者”的动漫</span>
 
 
-
-</div>
 
