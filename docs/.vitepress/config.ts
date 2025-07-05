@@ -9,7 +9,7 @@ export default defineConfig({
 
   lang: 'zh-CN',
   title: '为自由献诗',
-  description: '这是子十的博客',
+  description: '子十的博客',
   head,
   lastUpdated: true,
   markdown: {
@@ -63,7 +63,7 @@ export default defineConfig({
       next: '下一篇',
     },
   },
-  // vite 配置,取消sass警告
+  // vite 配置，取消 sass 警告
   vite: {
     css: {
       preprocessorOptions: {

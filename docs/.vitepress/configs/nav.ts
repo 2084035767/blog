@@ -11,6 +11,7 @@ export const nav: DefaultTheme.Config['nav'] = [
   //   ],
   // },
   // { text: '笔记', link: '/note/', activeMatch: '^/note/' },
+  { text: '作品', link: '/works', activeMatch: '^/works' },
   { text: '友链', link: '/friends', activeMatch: '^/friends' },
   { text: '关于', link: '/about', activeMatch: '^/about' },
 ]

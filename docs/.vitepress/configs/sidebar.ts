@@ -7,7 +7,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = generateSidebar([
     scanStartPath: 'post',
     resolvePath: '/post/',
     collapsed: true,
-    excludeFolders: ['img', 'books', 'poem'],
+    excludePattern: ['img', 'books', 'poem'],
     sortMenusByFrontmatterOrder: true,
     useTitleFromFrontmatter: true,
   },

@@ -1,6 +1,12 @@
 <template>
   <div class="heti heti--ancient">
-    <h2>{{ props.t }}</h2>
+    <h2>
+      {{ props.t }}
+      <span class="heti-meta heti-small"
+        >[现]
+        <abbr title="号子十">子十</abbr>
+      </span>
+    </h2>
     <p class="heti-verse heti-x-large">
       <span v-for="(line, index) in props.p" :key="index">
         {{ line }}

@@ -10,11 +10,11 @@
     "build": "vitepress build docs"
   },
   "devDependencies": {
-    "@types/dom-view-transitions": "^1.0.5",
+    "@types/dom-view-transitions": "^1.0.6",
     "markdown-it-mathjax3": "^4.3.2",
-    "sass": "^1.83.4",
+    "sass": "^1.89.2",
     "vitepress": "^1.6.3",
-    "vitepress-sidebar": "^1.30.2",
-    "vue": "^3.5.13"
+    "vitepress-sidebar": "^1.31.1",
+    "vue": "^3.5.17"
   }
 }
