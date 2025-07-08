@@ -4,7 +4,7 @@
       {{ props.t }}
       <span class="heti-meta heti-small"
         >[现]
-        <abbr title="号子十">子十</abbr>
+        <abbr title="也就是我">子十</abbr>
       </span>
     </h2>
     <p class="heti-verse heti-x-large">
