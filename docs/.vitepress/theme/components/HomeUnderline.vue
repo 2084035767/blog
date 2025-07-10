@@ -14,12 +14,16 @@ const { frontmatter: fm } = useData()
  */
 onMounted(() => {
   const p = document.querySelector('.VPHero .text') as HTMLElement | null
+  const n = document.querySelector('.VPHero .name') as HTMLElement | null
   const s = document.querySelector('#hero-text') as HTMLElement | null
 
-  if (!p || !s) return
+  if (!p || !n || !s) return
 
   // 移除 `.VPHero .text` 元素下的所有子节点
-  while (p.lastChild) p.lastChild.remove()
+  while (n.lastChild && p.lastChild) {
+    n.lastChild.remove()
+    p.lastChild.remove()
+  }
 
   // 将 `#hero-text` 元素追加到 `.VPHero .text` 元素中
   p.append(s)
@@ -28,6 +32,21 @@ onMounted(() => {
 
 <template>
   <div id="hero-text">
+    <span style="display: inline-block; position: relative">
+      <span style="color: var(--vp-c-brand)">{{ fm.hero.name }}</span>
+      <img
+        src="/logo.svg"
+        alt="logo"
+        style="
+          width: 99px;
+          height: 99px;
+          position: absolute;
+          top: -10px;
+          right: -80px;
+        "
+      />
+    </span>
+
     <span style="display: inline-block; position: relative">
       {{ fm.hero.text }}
       <svg

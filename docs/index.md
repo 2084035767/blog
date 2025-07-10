@@ -7,7 +7,7 @@ hero:
   text: 子十的成长之路
   tagline: 任何限制自由的链条都将束缚我们的灵魂
   image:
-    src: /logo.png
+    src: /bg.png
     alt: 背景图
   actions:
     - text: 博客
@@ -26,7 +26,7 @@ features:
     icon: 🤗
     details: 在记录与分享的过程中，梳理所学，交流所得，必有所获。
 ---
-
+<HomeUnderline />
 <style>
   /*爱的魔力转圈圈*/
 .m-home-layout .image-src:hover {
@@ -41,5 +41,7 @@ features:
   justify-content: flex-end;
   align-items: end;
 }
+.name clip {
+
+}
 </style>
-<HomeUnderline />
