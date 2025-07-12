@@ -109,8 +109,6 @@ categories:
 
  `::before` 伪元素用于在元素的内容之前插入内容。例如，给每个 `<a` 标签前添加一个 😃 表情：
 
- css复制
-
  ```css
  a::before {
    content: "😃";
@@ -121,8 +119,6 @@ categories:
 
  `::after` 伪元素用于在元素的内容之后插入内容。例如，给每个段落后面添加一个页脚：
 
- css复制
-
  ```css
  p::after {
    content: " - The End";
@@ -132,8 +128,6 @@ categories:
  ### 3. 伪元素的基本语法
 
  伪元素的基本语法如下：
-
- css复制
 
  ```css
  selector::pseudo-element {

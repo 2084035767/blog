@@ -1,5 +1,5 @@
 ---
-title: 谈谈| 喜欢的歌手
+title: 谈谈| 我喜欢的歌手
 date: 2022-5-18
 categories:
   - 随笔感想
@@ -8,7 +8,7 @@ tags:
 order: 5
 ---
 
-# 喜欢的歌手
+# 我喜欢的歌手
 
 ::: tip 
 
@@ -16,7 +16,7 @@ order: 5
 
 :::
 
-::: warning
+::: warning 提示
 
 暂时隐藏
 

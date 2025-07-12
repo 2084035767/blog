@@ -38,11 +38,11 @@ onMounted(() => {
         src="/logo.svg"
         alt="logo"
         style="
-          width: 99px;
-          height: 99px;
+          width: 2.5em;
+          height: 2.5em;
           position: absolute;
-          top: -10px;
-          right: -80px;
+          top:-0.7em;
+          right:-2em;
         "
       />
     </span>

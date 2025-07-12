@@ -11,7 +11,7 @@ tags:
 
 ::: tip
 
-springboot 的配置文件从 迁移到yaml,咱也得了解了解😁
+springboot 的配置文件从 迁移到yaml，咱也得了解了解😁
 
 :::
 

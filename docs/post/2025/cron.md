@@ -1,5 +1,5 @@
 ---
-title: 关于| cron 表达式
+title: 关于| Cron 表达式
 date: 2025-4-21
 categories:
   - 编程知识

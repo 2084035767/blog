@@ -1,5 +1,5 @@
 ---
-title: 关于| Java 分层架构
+title: 关于| Java MVC架构
 date: 2022-8-9
 categories: 
   - 编程知识
@@ -8,22 +8,23 @@ tags:
 order: 8
 ---
 
-# Java 分层架构
+# Java MVC架构
 
 ::: tip 前言
 
-最近写「JavaWeb」项目的时候，发现MVC分层架构往往不只三层，还有其他层。
-秘书给我查查🧐
+最近写「JavaWeb」项目的时候，发现MVC分层架构往往不只三层，还有其他层。秘书给我查查🧐
+
+TODO 待修改
 
 :::
 
 
 
-## 分层架构
+## MVC架构
 
-> 如果你写过web项目，你可能见过这种“约定”😶
+> 如果你写过 JavaWeb项目，你可能见过这种“约定”😶
 
-一般Java后端会有这几种层结构
+一般 Java 后端会有这几种层结构
 
 | **Dao**层 | **Entity**层 | **Service**层 | **Controller**层 | **view**层（前后端一体） |
 | --------- | ------------ | ------------- | ---------------- | ------------------------ |
@@ -41,11 +42,11 @@ order: 8
 -  `Entity` 类，需要遵循 「SOLID 原则」，确保其单一职责、高内聚、低耦合、易扩展和易维护。
 
 ```java
+@Data
 public class User {
     private Long id;
     private String username;
     private String email;
-    
     // Constructors, getters, setters, and other methods
 }
 ```
@@ -140,9 +141,7 @@ public class UserController {
         User user = new User();
         user.setUsername(username);
         user.setEmail(email);
-        
         userService.createUser(user);
-        
         // Perform any necessary view-related operations or redirect to another page
     }
     
@@ -303,7 +302,7 @@ public class Product {
 
 ## 写在最后
 
-其实Java分层架构不过是遵循了“高内聚，低耦合”原则，”单一职责“原则等等，实现各种层的层层抽象。每层有各自的职责，使JavaWeb开发更加效率和容易。
+其实Java MVC架构不过是遵循了“高内聚，低耦合”原则，”单一职责“原则等等，实现各种层的层层抽象。每层有各自的职责，使 JavaWeb开发更加效率和容易。
 
 > 反正都是抽象，”面向抽象编程“🤪
 

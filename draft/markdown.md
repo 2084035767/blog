@@ -1,5 +1,5 @@
 ---
-title: h胡说| MarkDown 简明使用
+title: 胡说| MarkDown 简明使用
 date: 2025-1-12
 categories:
   - 编程知识
