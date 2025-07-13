@@ -8,17 +8,13 @@ layout: page
         avatar: '',
         name: '暂无',
         title: '',
-        links: [{ icon: 'github', link: '' },
-                { icon: 'twitter', link: '' }]
+        links: [{ icon: 'github', link: '' }]
 },]
 </script>
+
 <VPTeamPage>
 <VPTeamPageTitle>
     <template #title>MY PROJECT</template>
     <template #lead>敬请期待</template>
 </VPTeamPageTitle>
-<!--
- <VPTeamMembers size="small" :members="members"/>
--->
-
 </VPTeamPage>

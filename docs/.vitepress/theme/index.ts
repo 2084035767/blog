@@ -1,4 +1,5 @@
 import { EnhanceAppContext } from 'vitepress'
+import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 import DefaultTheme from 'vitepress/theme'
 import { watch } from 'vue'
 import CustomLayout from './components/CustomLayout.vue'
@@ -38,6 +39,7 @@ export default {
     app.component('HomeUnderline', HomeUnderline)
     app.component('poem', CustomPoem)
     app.provide('DEV', 'development')
+    enhanceAppWithTabs(app)
     if (typeof window !== 'undefined') {
       watch(
         () => router.route.data.relativePath,

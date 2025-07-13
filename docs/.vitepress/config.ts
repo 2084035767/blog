@@ -1,6 +1,6 @@
-import { spoiler } from '@mdit/plugin-spoiler'
 import { defineConfig } from 'vitepress'
 import { RssPlugin } from 'vitepress-plugin-rss'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import { head, nav, sidebar } from './configs'
 export default defineConfig({
   // outDir: '../dist',
@@ -14,7 +14,7 @@ export default defineConfig({
   head,
   lastUpdated: true,
   markdown: {
-    lineNumbers: true,
+    lineNumbers: false,
     math: true,
     image: {
       // 默认禁用图片懒加载
@@ -22,11 +22,7 @@ export default defineConfig({
     },
     config: md => {
       // 使用更多的 Markdown-it 插件！
-      md.use(spoiler)
-      // md.use(tab, {
-      //   // 你的选项，name 是必填的
-      //   name: 'tabs',
-      // })
+      md.use(tabsMarkdownPlugin)
     },
   },
   /* 主题配置 */
