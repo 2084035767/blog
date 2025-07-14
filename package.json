@@ -1,6 +1,7 @@
 {
   "name": "vblog",
   "private": true,
+  "type": "module",
   "version": "1.0.0",
   "description": "zs's blog",
   "scripts": {
