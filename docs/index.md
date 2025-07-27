@@ -4,7 +4,7 @@ layoutClass: 'm-home-layout'
 
 hero:
   name: 为自由献诗
-  text: 子十的成长之路
+  text: 残躯的自我救赎
   tagline: 任何限制自由的链条都将束缚我们的灵魂
   image:
     src: /bg.png
@@ -12,6 +12,9 @@ hero:
   actions:
     - text: 博客
       link: /post/
+    - text: 诗与月刊
+      link: /monthly/
+      theme: alt
     - text: 关于我
       link: /about
       theme: alt

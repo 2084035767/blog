@@ -76,3 +76,15 @@
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand) !important;
 }
+
+/**
+ * Component: Card
+ * -------------------------------------------------------------------------- */
+:root {
+  --card-pad: clamp(1rem, 2vw, 1.5rem);
+  --card-radius: clamp(8px, 1.2vw, 12px);
+  --card-gap: clamp(1rem, 2vw, 1.5rem);
+  --card-phone: clamp(0.75rem, 4vw, 1.5rem);
+  --card-pad: clamp(1rem, 5vw, 2rem);
+  --card-pc: clamp(1.5rem, 6vw, 3rem)
+}

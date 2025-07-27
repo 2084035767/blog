@@ -2,7 +2,7 @@
 
 ### 嗨！👋🏻，我是子十
 
-博主是一位 ~~在读大学生~~ ，`<Developer/>` 毕业生。**困于山林，难攀高峰。**
+我是一位 ~~在读大学生~~ ，`<Developer/>` 毕业生。**困于山林，难攀高峰。**
 
 > 虽然不喜欢贴标签，但这里还是贴上吧，为了方便他人快速了解我。**或者你不必了解我**🤔。
 
@@ -28,7 +28,7 @@
 
 这里是子十的博客，主要记录我的学习和感悟。
 
-在此开设博客的目的是：“**在平凡的~~大学~~生活中，记录下来我不起眼的故事与经历。**”
+在此开设博客的目的是：“**在平凡的 ~~大学~~ 生活中，记录下来我不起眼的故事与经历。**”
 
 
 
@@ -57,12 +57,13 @@
 <Badge type="info" text="nodejs" />
 <Badge type="info" text="pnpm" />
 <Badge type="info" text="sass" />
-<Badge type="info" text="tailwind" />
+<Badge type="info" text="tailwindcss" />
 <Badge type="info" text="unocss" />
 <Badge type="info" text="vue" />
 <Badge type="info" text="react" />
 <Badge type="info" text="uniapp" />
-<Badge type="info" text="vite" />
+<Badge type="info" text="vitepress" />
+<Badge type="info" text="hexo" />
 <Badge type="info" text="vitepress" />
 
 **后端**

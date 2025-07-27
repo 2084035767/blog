@@ -57,7 +57,7 @@ export default defineConfig({
     },
     footer: {
       message: '如有转载或 CV 请标注本站原文地址',
-      copyright: 'Copyright © 2021-present 子十',
+      copyright: `Copyright © 2021-${new Date().getFullYear()} 子十`,
     },
     darkModeSwitchLabel: '外观',
     returnToTopLabel: '返回顶部',

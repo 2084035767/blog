@@ -4,6 +4,7 @@ import DefaultTheme from 'vitepress/theme'
 import { watch } from 'vue'
 import CustomLayout from './components/CustomLayout.vue'
 import CustomPoem from './components/CustomPoem.vue'
+import CustomWork from './components/CustomWork.vue'
 import HomeUnderline from './components/HomeUnderline.vue'
 
 import './styles/index.scss'
@@ -37,7 +38,8 @@ export default {
   Layout: CustomLayout,
   enhanceApp({ app, router }: EnhanceAppContext) {
     app.component('HomeUnderline', HomeUnderline)
-    app.component('poem', CustomPoem)
+    app.component('Poem', CustomPoem)
+    app.component('Work', CustomWork)
     app.provide('DEV', 'development')
     enhanceAppWithTabs(app)
     if (typeof window !== 'undefined') {

@@ -12,7 +12,7 @@ layout: page
                 { icon: 'twitter', link: '' }]
 },]
 </script>
-<VPTeamPage>
+
 <VPTeamPageTitle>
     <template #title>MY FRIENDS</template>
     <template #lead>等什么，快来交换吧</template>
@@ -20,6 +20,4 @@ layout: page
 <!--
  <VPTeamMembers size="small" :members="members"/>
 -->
-
-</VPTeamPage>
 
