@@ -32,6 +32,15 @@ const projects = [
     },
     tags: ['React', 'Vite', 'TypeScript'],
   },
+  {
+    name: '深选-SiftDeep',
+    desc: '高质量视频推荐网站，采用 monorepo、Next.js 和 Nest.js 技术栈。',
+    links: {
+      icon: 'gitee',
+      url: 'https://gitee.com/zs2084035767/SiftDeep.git',
+    },
+    tags: ['Next.js', 'Nest.js', 'TypeScript'],
+  },
 ]
 </script>
 
