@@ -10,7 +10,7 @@ export const nav: DefaultTheme.Config['nav'] = [
         link: '/design-pattern/',
         activeMatch: '^/design-pattern/',
       },
-      { text: '诗与月刊', link: '/monthly/', activeMatch: '^/monthly/' },
+      { text: '诗与周刊', link: '/weekly/', activeMatch: '^/weekly/' },
       // { text: '文档', link: '/base/', activeMatch: '^/base/' },
       // { text: '源码', link: '/code/', activeMatch: '^/code/' },
       // { text: '力扣', link: '/leetcode/', activeMatch: '^/leetcode/' },

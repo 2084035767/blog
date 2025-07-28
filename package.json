@@ -6,7 +6,8 @@
   "description": "zs's blog",
   "scripts": {
     "dev": "vitepress dev docs --port=8732",
-    "build": "vitepress build docs"
+    "build": "vitepress build docs",
+    "upload": "powershell -ExecutionPolicy Bypass -File ./script/upload.ps1"
   },
   "devDependencies": {
     "@types/dom-view-transitions": "^1.0.6",
