@@ -6,7 +6,7 @@
   </VPTeamPageTitle>
 
   <div class="project-grid">
-    <ProjectCard
+    <WorkCard
       v-for="p in projects"
       :key="p.name"
       :name="p.name"
@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { VPTeamPageTitle } from 'vitepress/theme'
-import ProjectCard from './ProjectCard.vue'
+import WorkCard from './WorkCard.vue'
 
 // 想加项目直接往数组里 push
 const projects = [
@@ -28,7 +28,7 @@ const projects = [
     desc: '极简、响应式的「个人介绍 + 简历」页面，100% 纯前端，零后端依赖。',
     links: {
       icon: 'gitee',
-      url: 'https://gitee.com/zs2084035767/online-resume.git',
+      url: 'https://gitee.com/zs2084035767/online-resume',
     },
     tags: ['React', 'Vite', 'TypeScript'],
   },
@@ -37,9 +37,18 @@ const projects = [
     desc: '高质量视频推荐网站，采用 monorepo、Next.js 和 Nest.js 技术栈。',
     links: {
       icon: 'gitee',
-      url: 'https://gitee.com/zs2084035767/SiftDeep.git',
+      url: 'https://gitee.com/zs2084035767/SiftDeep',
     },
     tags: ['Next.js', 'Nest.js', 'TypeScript'],
+  },
+  {
+    name: '骑迹-Miracle',
+    desc: '大学毕业设计项目，基于SpringBoot+Vue+UniApp开发的骑行攻略社区小程序。',
+    links: {
+      icon: 'gitee',
+      url: 'https://gitee.com/zs2084035767/Miracle',
+    },
+    tags: ['SpringBoot', 'Vue', 'UniApp'],
   },
 ]
 </script>

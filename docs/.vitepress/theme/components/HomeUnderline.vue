@@ -32,19 +32,32 @@ onMounted(() => {
 
 <template>
   <div id="hero-text">
-    <span style="display: inline-block; position: relative">
+    <span style="display: inline-block; position: relative; z-index: 1">
       <span style="color: var(--vp-c-brand)">{{ fm.hero.name }}</span>
-      <img
+      <object
+        id="svg-object"
+        data="/logo.svg"
+        type="image/svg+xml"
+        style="
+          width: 4em;
+          height: 4em;
+          z-index: -1;
+          position: absolute;
+          top: -1.1em;
+          right: -3em;
+        "
+      ></object>
+      <!-- <img
         src="/logo.svg"
         alt="logo"
         style="
           width: 2.5em;
           height: 2.5em;
           position: absolute;
-          top:-0.7em;
-          right:-2em;
+          top: -0.7em;
+          right: -2em;
         "
-      />
+      /> -->
     </span>
 
     <span style="display: inline-block; position: relative">

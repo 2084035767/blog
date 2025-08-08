@@ -172,13 +172,13 @@ order: 2
 
 良好的命名可以代替注释，前提英语得学好🙄
 
-> 别管，我 abcd 能看懂就行🤪
+> 别管，`abcd` 我能看懂就行🤪
 
 
 
 ## 参考三三
 
-- [维基百科：命名约定](https://en.wikipedia.org/wiki/Naming_convention_(programming))
-- [编程命名规范 - 知乎](https://zhuanlan.zhihu.com/p/89909623)
-- [命名约定 — Google 开源项目风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/naming.html)
+- https://en.wikipedia.org/wiki/Naming_convention_(programming)
+- https://zhuanlan.zhihu.com/p/89909623
+- https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/naming.html
 

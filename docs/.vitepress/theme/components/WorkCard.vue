@@ -1,4 +1,3 @@
-<!-- ProjectCard.vue  同一目录 -->
 <template>
   <article class="card">
     <div class="link-bar">
