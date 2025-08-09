@@ -84,16 +84,23 @@
     opacity: 0.4;
   }
 }
+/* 仅对 .md 里的 img 生效 */
+.vp-doc  {
+  img,video{
+    border-radius: 6px;
+  }
+  table {
+    width: 100%;
+    display: table;
+  }
+}
 
 /* logo 图片圆角 */
 .logo {
   border-radius: 0.375rem;
 }
 
-table {
-  width: 100% !important;
-  display: table;
-}
+
 
 /**
  * VitePress: Custom fix

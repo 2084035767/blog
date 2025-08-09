@@ -7,12 +7,13 @@
   "scripts": {
     "dev": "vitepress dev docs --port=8732",
     "build": "vitepress build docs",
+    "commit": "nu ./script/commit.nu",
     "upload": "powershell -ExecutionPolicy Bypass -File ./script/upload.ps1"
   },
   "devDependencies": {
     "@types/dom-view-transitions": "^1.0.6",
-    "sass": "^1.89.2",
-    "vitepress": "^1.6.3",
+    "sass": "^1.90.0",
+    "vitepress": "^1.6.4",
     "vitepress-plugin-rss": "^0.3.1",
     "vitepress-plugin-tabs": "^0.7.1",
     "vitepress-sidebar": "^1.33.0",
