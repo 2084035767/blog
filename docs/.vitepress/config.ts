@@ -18,7 +18,7 @@ export default defineConfig({
     math: true,
     image: {
       // 默认禁用图片懒加载
-      lazyLoading: true,
+      lazyLoading: false,
     },
     config: md => {
       // 使用更多的 Markdown-it 插件！
