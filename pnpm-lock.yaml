@@ -12,18 +12,6 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
     devDependencies:
-      '@mdit/plugin-abbr':
-        specifier: ^0.22.1
-        version: 0.22.1
-      '@mdit/plugin-figure':
-        specifier: ^0.22.1
-        version: 0.22.1
-      '@mdit/plugin-mark':
-        specifier: ^0.22.1
-        version: 0.22.1
-      '@mdit/plugin-spoiler':
-        specifier: ^0.22.1
-        version: 0.22.1
       '@types/dom-view-transitions':
         specifier: ^1.0.6
         version: 1.0.6
@@ -314,41 +302,6 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
-
-  '@mdit/plugin-abbr@0.22.1':
-    resolution: {integrity: sha512-qCbS6c1FMBNOUDzvly0+miXpEtt63kQ3f6am2EgSrwGLloLyFsFzfwlQR13oZyQyW1+Wg8z0NaKzKTKcBpFraQ==}
-    peerDependencies:
-      markdown-it: ^14.1.0
-    peerDependenciesMeta:
-      markdown-it:
-        optional: true
-
-  '@mdit/plugin-figure@0.22.1':
-    resolution: {integrity: sha512-z7uqtKsQ/ILkdM4pLrfuvz2eAhtwNzRPT9xnixFosrMgF7CEHbBtFTF6nc2ht1mOqCTRqoIL+FWg8InYMiBPhQ==}
-    engines: {node: '>= 18'}
-    peerDependencies:
-      markdown-it: ^14.1.0
-    peerDependenciesMeta:
-      markdown-it:
-        optional: true
-
-  '@mdit/plugin-mark@0.22.1':
-    resolution: {integrity: sha512-2blMM/gGyqPARvaal44mt0pOi+8phmFpj7D4suG4qMd1j8aGDZl9R7p8inbr3BePOady1eloh0SWSCdskmutZg==}
-    engines: {node: '>= 18'}
-    peerDependencies:
-      markdown-it: ^14.1.0
-    peerDependenciesMeta:
-      markdown-it:
-        optional: true
-
-  '@mdit/plugin-spoiler@0.22.1':
-    resolution: {integrity: sha512-sk+timpOVDRlC1ShjsZ5f48eqXzJajZK1rMhtSe/ON+9ttxaXsvTPQzK1xhAE+fUrN9CzfFcDUgMAhOkTl9deg==}
-    engines: {node: '>= 18'}
-    peerDependencies:
-      markdown-it: ^14.1.0
-    peerDependenciesMeta:
-      markdown-it:
-        optional: true
 
   '@parcel/watcher-android-arm64@2.5.1':
     resolution: {integrity: sha512-KF8+j9nNbUN8vzOFDpRMsaKBHZ/mcjEjMToVMJOhTozkDonQFFrRcfdLWn6yWKCmJKmdVxSgHiYvTCef4/qcBA==}
@@ -1652,22 +1605,6 @@ snapshots:
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
-
-  '@mdit/plugin-abbr@0.22.1':
-    dependencies:
-      '@types/markdown-it': 14.1.2
-
-  '@mdit/plugin-figure@0.22.1':
-    dependencies:
-      '@types/markdown-it': 14.1.2
-
-  '@mdit/plugin-mark@0.22.1':
-    dependencies:
-      '@types/markdown-it': 14.1.2
-
-  '@mdit/plugin-spoiler@0.22.1':
-    dependencies:
-      '@types/markdown-it': 14.1.2
 
   '@parcel/watcher-android-arm64@2.5.1':
     optional: true
