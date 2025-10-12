@@ -1,7 +1,6 @@
 import { EnhanceAppContext } from 'vitepress'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 import DefaultTheme from 'vitepress/theme'
-import { watch } from 'vue'
 import CustomLayout from './components/CustomLayout.vue'
 import CustomPoem from './components/CustomPoem.vue'
 import CustomWork from './components/CustomWork.vue'
@@ -31,24 +30,24 @@ if (typeof window !== 'undefined') {
   }
 }
 
-let homePageStyle: HTMLStyleElement | undefined
+// let homePageStyle: HTMLStyleElement | undefined
 
 export default {
   extends: DefaultTheme,
   Layout: CustomLayout,
-  enhanceApp({ app, router }: EnhanceAppContext) {
+  enhanceApp({ app }: EnhanceAppContext) {
     app.component('HomeUnderline', HomeUnderline)
     app.component('Poem', CustomPoem)
     app.component('Work', CustomWork)
     app.provide('DEV', 'development')
     enhanceAppWithTabs(app)
-    if (typeof window !== 'undefined') {
-      watch(
-        () => router.route.data.relativePath,
-        () => updateHomePageStyle(location.pathname === '/'),
-        { immediate: true }
-      )
-    }
+    // if (typeof window !== 'undefined') {
+      // watch(
+      // () => router.route.data.relativePath,
+      // () => updateHomePageStyle(location.pathname === '/'),
+      // { immediate: true }
+      // )
+    // }
   },
 }
 
@@ -65,20 +64,20 @@ if (typeof window !== 'undefined') {
 }
 
 // Speed up the rainbow animation on home page
-function updateHomePageStyle(value: boolean) {
-  if (value) {
-    if (homePageStyle) return
+// function updateHomePageStyle(value: boolean) {
+//   if (value) {
+//     if (homePageStyle) return
 
-    homePageStyle = document.createElement('style')
-    homePageStyle.innerHTML = `
-    :root {
-      animation: rainbow 12s linear infinite;
-    }`
-    document.body.appendChild(homePageStyle)
-  } else {
-    if (!homePageStyle) return
+//     homePageStyle = document.createElement('style')
+//     homePageStyle.innerHTML = `
+//     :root {
+//       animation: rainbow 12s linear infinite;
+//     }`
+//     document.body.appendChild(homePageStyle)
+//   } else {
+//     if (!homePageStyle) return
 
-    homePageStyle.remove()
-    homePageStyle = undefined
-  }
-}
+//     homePageStyle.remove()
+//     homePageStyle = undefined
+//   }
+// }

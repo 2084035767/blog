@@ -1,7 +1,10 @@
 <template>
   <article class="card">
     <div class="link-bar">
-      <h3 class="name">{{ name }}</h3>
+      <h3 class="name">
+        {{ name }}
+        <VPBadge :type="badge.type" :text="badge.text" />
+      </h3>
       <a :href="links.url" target="_blank">
         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <title>Gitee</title>
@@ -27,11 +30,16 @@ interface Link {
   icon: string
   url: string
 }
+interface Badge {
+  type: string
+  text: string
+}
 
 defineProps<{
   name: string
   desc: string
   links: Link
+  badge: Badge
   tags?: string[]
 }>()
 </script>

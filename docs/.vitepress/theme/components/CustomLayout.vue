@@ -79,10 +79,11 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 .check .icon {
   top: -2px;
 } */
-
+/*
 .date {
   font-size: 15px;
   color: #7f7f7f;
   margin-right: 10px;
 }
+*/
 </style>

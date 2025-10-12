@@ -1,69 +1,83 @@
 /**
- * Customize default theme styling by overriding CSS variables:
+ * 通过覆盖 CSS 变量来自定义默认主题样式
+ * 原始变量定义参考:
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
 
+// 品牌色系调整
 :root {
   --vp-c-brand-lightest: var(--vp-c-brand);
 }
 
 /**
- * Component: Button
+ * 组件: 按钮 (Button)
  * -------------------------------------------------------------------------- */
 :root {
-  --vp-button-brand-border: var(--vp-c-brand-light);
-  --vp-button-brand-text: var(--vp-c-white);
-  --vp-button-brand-bg: var(--vp-c-brand);
-  --vp-button-brand-hover-border: var(--vp-c-brand-light);
-  --vp-button-brand-hover-text: var(--vp-c-white);
-  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
-  --vp-button-brand-active-border: var(--vp-c-brand-light);
-  --vp-button-brand-active-text: var(--vp-c-white);
-  --vp-button-brand-active-bg: var(--vp-button-brand-bg);
+  // 品牌按钮基础样式
+  --vp-button-brand-border: var(--vp-c-brand-light); // 边框颜色
+  --vp-button-brand-text: var(--vp-c-white); // 文字颜色
+  --vp-button-brand-bg: var(--vp-c-brand); // 背景颜色
+
+  // 按钮悬停状态样式
+  --vp-button-brand-hover-border: var(--vp-c-brand-light); // 悬停边框色
+  --vp-button-brand-hover-text: var(--vp-c-white); // 悬停文字色
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light); // 悬停背景色
+
+  // 按钮激活状态样式
+  --vp-button-brand-active-border: var(--vp-c-brand-light); // 激活边框色
+  --vp-button-brand-active-text: var(--vp-c-white); // 激活文字色
+  --vp-button-brand-active-bg: var(--vp-button-brand-bg); // 激活背景色
 }
 
 /**
- * Component: Home
+ * 组件: 首页 (Home)
  * -------------------------------------------------------------------------- */
 :root {
+  // 首页主标题文字渐变效果
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    var(--vp-c-brand) 30%,
-    var(--vp-c-brand-next)
-  );
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    var(--vp-c-brand) 30%,
-    var(--vp-c-brand-next)
-  );
-  --vp-home-hero-image-filter: blur(80px);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg,
+      var(--vp-c-brand) 30%,
+      var(--vp-c-brand-next));
+
+  // 首页背景图像样式
+  --vp-home-hero-image-background-image: linear-gradient(-45deg,
+      var(--vp-c-brand) 30%,
+      var(--vp-c-brand-next));
+  --vp-home-hero-image-filter: blur(80px); // 背景模糊效果
 }
+
+// 响应式背景模糊调整
 @media (min-width: 640px) {
   :root {
     --vp-home-hero-image-filter: blur(120px);
   }
 }
+
 @media (min-width: 960px) {
   :root {
     --vp-home-hero-image-filter: blur(120px);
   }
 }
-/* Safari has a very bad performance on gradient and filter */
+
+// 针对 Safari 和 Firefox 浏览器的性能优化
+// 这些浏览器在渐变和滤镜方面性能较差
 .browser-safari,
 .browser-firefox {
-  --vp-home-hero-image-background-image: transparent;
-  --vp-home-hero-image-filter: '';
+  --vp-home-hero-image-background-image: transparent; // 移除背景图
+  --vp-home-hero-image-filter: ''; // 移除滤镜效果
 }
 
 /**
- * Component: Custom Block
+ * 组件: 自定义块 (Custom Block)
  * -------------------------------------------------------------------------- */
 :root {
-  --vp-custom-block-tip-border: var(--vp-c-brand);
-  --vp-custom-block-tip-text: var(--vp-c-brand-darker);
-  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+  // 提示类型自定义块样式
+  --vp-custom-block-tip-border: var(--vp-c-brand); // 边框颜色
+  --vp-custom-block-tip-text: var(--vp-c-brand-darker); // 文字颜色
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm); // 背景颜色
 }
+
+// 暗色主题下的提示块样式调整
 .dark {
   --vp-custom-block-tip-border: var(--vp-c-brand);
   --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
@@ -71,20 +85,20 @@
 }
 
 /**
- * Component: Algolia
+ * 组件: Algolia 搜索 (需要使用 !important 来覆盖默认样式)
  * -------------------------------------------------------------------------- */
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand) !important;
 }
 
 /**
- * Component: Card
+ * 组件: 卡片 (Card) - 使用 clamp() 实现响应式尺寸
  * -------------------------------------------------------------------------- */
 :root {
-  --card-pad: clamp(1rem, 2vw, 1.5rem);
-  --card-radius: clamp(8px, 1.2vw, 12px);
-  --card-gap: clamp(1rem, 2vw, 1.5rem);
-  --card-phone: clamp(0.75rem, 4vw, 1.5rem);
-  --card-pad: clamp(1rem, 5vw, 2rem);
-  --card-pc: clamp(1.5rem, 6vw, 3rem)
+  --card-pad: clamp(1rem, 2vw, 1.5rem); // 卡片内边距 (最小1rem, 理想2vw, 最大1.5rem)
+  --card-radius: clamp(8px, 1.2vw, 12px); // 卡片圆角 (最小8px, 理想1.2vw, 最大12px)
+  --card-gap: clamp(1rem, 2vw, 1.5rem); // 卡片间距
+  --card-phone: clamp(0.75rem, 4vw, 1.5rem); // 移动端卡片相关尺寸
+  --card-pad: clamp(1rem, 5vw, 2rem); // 卡片内边距 (重复定义，后者会覆盖)
+  --card-pc: clamp(1.5rem, 6vw, 3rem); // PC端卡片相关尺寸
 }

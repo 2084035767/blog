@@ -51,45 +51,36 @@
 <Badge type="info" text="javascript" />
 <Badge type="info" text="typescript" />
 <Badge type="info" text="nodejs" />
-<Badge type="info" text="pnpm" />
 <Badge type="info" text="sass" />
-<Badge type="info" text="tailwindcss" />
 <Badge type="info" text="unocss" />
+<Badge type="info" text="tailwindcss" />
 <Badge type="info" text="vue" />
 <Badge type="info" text="react" />
-<Badge type="info" text="uniapp" />
-<Badge type="info" text="pinia" />
-<Badge type="info" text="axios" />
 <Badge type="info" text="vite" />
-<Badge type="info" text="element-plus" />
-<Badge type="info" text="primevue" />
-<Badge type="info" text="shadcn/ui" />
-<Badge type="info" text="hexo" />
-<Badge type="info" text="vuepress" />
-<Badge type="info" text="vitepress" />
 
-⚙️ **后端**
+⚙️ 后端
 <Badge type="info" text="c" />
 <Badge type="info" text="python" />
 <Badge type="info" text="java" />
 <Badge type="info" text="rust" />
-<Badge type="info" text="maven" />
 <Badge type="info" text="springboot" />
 <Badge type="info" text="springcloud" />
-<Badge type="info" text="springsecurity" />
 <Badge type="info" text="flask" />
-<Badge type="info" text="fastapi" />
 <Badge type="info" text="mysql" />
 <Badge type="info" text="postgresql" />
 <Badge type="info" text="redis" />
 <Badge type="info" text="rabbitmq" />
 
+💻**客户端**
+
+<Badge type="info" text="uniapp" />
+<Badge type="info" text="dart" />
+<Badge type="info" text="flutter" />
+
 🛠️ **其他**
 <Badge type="info" text="lua" />
 <Badge type="info" text="bash" />
-<Badge type="info" text="shell" />
 <Badge type="info" text="git" />
-<Badge type="info" text="github" />
 <Badge type="info" text="md" />
 <Badge type="info" text="linux" />
 <Badge type="info" text="docker" />
@@ -97,8 +88,6 @@
 <Badge type="info" text="nginx" />
 <Badge type="info" text="vscode" />
 <Badge type="info" text="cursor" />
-<Badge type="info" text="typora" />
-<Badge type="info" text="vercel" />
 
 
 

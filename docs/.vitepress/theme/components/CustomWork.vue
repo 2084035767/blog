@@ -13,6 +13,7 @@
       :desc="p.desc"
       :links="p.links"
       :tags="p.tags"
+      :badge="p.badge"
     />
   </div>
 </template>
@@ -24,8 +25,12 @@ import WorkCard from './WorkCard.vue'
 // 想加项目直接往数组里 push
 const projects = [
   {
-    name: '在线简历',
+    name: '在线简历-OnlineR',
     desc: '极简、响应式的「个人介绍 + 简历」页面，100% 纯前端，零后端依赖。',
+    badge: {
+      type: 'tip',
+      text: '维护中',
+    },
     links: {
       icon: 'gitee',
       url: 'https://gitee.com/zs2084035767/online-resume',
@@ -35,6 +40,10 @@ const projects = [
   {
     name: '深选-SiftDeep',
     desc: '高质量视频推荐网站，采用 monorepo、Next.js 和 Nest.js 技术栈。',
+    badge: {
+      type: 'danger',
+      text: '暂停中',
+    },
     links: {
       icon: 'gitee',
       url: 'https://gitee.com/zs2084035767/SiftDeep',
@@ -44,11 +53,28 @@ const projects = [
   {
     name: '骑迹-Miracle',
     desc: '大学毕业设计项目，基于SpringBoot+Vue+UniApp开发的骑行攻略社区小程序。',
+    badge: {
+      type: 'info',
+      text: '已存档',
+    },
     links: {
       icon: 'gitee',
       url: 'https://gitee.com/zs2084035767/Miracle',
     },
     tags: ['SpringBoot', 'Vue', 'UniApp'],
+  },
+  {
+    name: '代办事项-TodoApp',
+    desc: '一个用于练习的 Flutter 入门项目，实现了一个简单的待办事项应用。',
+    badge: {
+      type: 'info',
+      text: '已存档',
+    },
+    links: {
+      icon: 'gitee',
+      url: 'https://gitee.com/zs2084035767/flutter_todo_app',
+    },
+    tags: ['Dart', 'Flutter'],
   },
 ]
 </script>
@@ -58,10 +84,10 @@ const projects = [
 .project-grid {
   display: grid;
   gap: var(--card-gap);
-  margin-top: 2rem;
+  margin: 0 0 2rem 0;
   /* 防止超宽屏被无限拉伸，整体居中 */
   max-width: 1440px;
-  // margin: 0 auto;
+
 
   /* 默认 1 列 */
   grid-template-columns: 1fr;

@@ -1,0 +1,73 @@
+ // 步骤条样式组件
+
+.vp-doc .vp-steps {
+  margin: 16px 0;
+
+  // 重置有序列表和无序列表默认样式
+  > :where(ol, ul) {
+    padding-inline-start: 0;
+    list-style: none;
+
+    // 每个步骤项的样式
+    >li {
+      position: relative;
+      min-height: 28px;
+      padding-left: 44px; // 为数字标记留出空间
+      margin-bottom: 16px;
+      line-height: 28px;
+
+      // 步骤数字标记样式
+      &::before {
+        position: absolute;
+        inset-inline-start: 0;
+        top: 0;
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        color: var(--vp-c-text-1);
+        text-align: center;
+        content: counter(list-item); // 使用列表项计数器显示数字
+        background-color: var(--vp-c-bg-soft);
+        border: solid 1px var(--vp-c-divider);
+        border-radius: 100%; // 圆形背景
+        transition: var(--vp-t-color);
+        transition-property: color, background-color, border-color;
+      }
+
+      // 非最后一个步骤项的连接线
+      &:not(:last-of-type)::after {
+        position: absolute;
+        inset-inline-start: 14px; // 居中对齐
+        top: 34px;
+        bottom: -10px;
+        width: 1px;
+        content: "";
+        background-color: var(--vp-c-divider);
+        transition: background-color var(--vp-t-color);
+      }
+
+      // 第一个子元素的样式重置
+      > :first-child {
+        margin-top: 0;
+
+        // 如果第一个子元素是标题，移除顶部间距和边框
+        &:where(h1, h2, h3, h4, h5, h6) {
+          padding-top: 0;
+          border-top: none;
+        }
+
+        // 如果第一个子元素是段落，设置行高
+        &:where(p) {
+          line-height: 28px;
+        }
+      }
+
+      // 相邻步骤项的间距调整
+      +li {
+        margin-top: 1px;
+      }
+    }
+  }
+}

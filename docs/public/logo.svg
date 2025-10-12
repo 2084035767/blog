@@ -14,6 +14,18 @@
     .frame.current-frame {
       display: block;
     }
+     /* --- 暗黑模式支持 --- */
+    @media (prefers-color-scheme: dark) {
+      /* 在暗黑模式下，将所有路径颜色改为白色 */
+      /* 注意：需要给路径一个类名或使用更通用的选择器 */
+      /* 这里假设所有需要改变颜色的路径都在 .dark-path 类下 */
+      /* 如果不加类名，可以使用 g path { fill: white; } 但这可能影响其他不需要改变的路径 */
+      .dark-path {
+        fill: white;
+      }
+      /* 或者更通用地改变所有路径颜色（需谨慎）*/
+      /* g path { fill: white; } */
+    }
   </style>
   <!-- 第1帧 -->
   <g class="frame current-frame">

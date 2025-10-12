@@ -2,12 +2,13 @@
   "name": "vblog",
   "private": true,
   "type": "module",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "zs's blog",
   "scripts": {
     "dev": "vitepress dev docs --port=8732",
     "build": "vitepress build docs",
     "commit": "nu ./script/commit.nu",
+    "new": "nu ./script/new-weekly.nu",
     "upload": "powershell -ExecutionPolicy Bypass -File ./script/upload.ps1"
   },
   "devDependencies": {
@@ -18,5 +19,8 @@
     "vitepress-plugin-tabs": "^0.7.1",
     "vitepress-sidebar": "^1.33.0",
     "vue": "^3.5.18"
+  },
+  "dependencies": {
+    "markdown-it-container": "^4.0.0"
   }
 }

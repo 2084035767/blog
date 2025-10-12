@@ -1,13 +1,14 @@
+import { mark } from '@mdit/plugin-mark'
+import container from 'markdown-it-container'
 import { defineConfig } from 'vitepress'
-import { RssPlugin } from 'vitepress-plugin-rss'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
-import { head, nav, sidebar } from './configs'
+import { head, themeConfig, vite } from './configs'
+
 export default defineConfig({
   // outDir: '../dist',
   // base: '/',
   // cleanUrls: true,
   /* markdown 配置 */
-
   lang: 'zh-CN',
   title: '为自由献诗',
   description: '任何限制自由的链条都将束缚我们的灵魂',
@@ -21,83 +22,22 @@ export default defineConfig({
       lazyLoading: false,
     },
     config: md => {
-      // 使用更多的 Markdown-it 插件！
-      md.use(tabsMarkdownPlugin)
-    },
-  },
-  /* 主题配置 */
-  themeConfig: {
-    nav,
-    sidebar,
-    i18nRouting: true,
-    logo: '/logo.png',
-    search: {
-      provider: 'local',
-      options: {
-        translations: {
-          button: {
-            buttonText: '搜索文档',
-            buttonAriaLabel: '搜索文档',
+      md.use(mark),
+        md.use(tabsMarkdownPlugin),
+        md.use(container, 'steps', {
+          render(tokens, idx) {
+            return tokens[idx].nesting === 1
+              ? '<div class="vp-steps">\n'
+              : '</div>\n'
           },
-          modal: {
-            noResultsText: '无法找到相关结果',
-            resetButtonTitle: '清除查询条件',
-            footer: {
-              selectText: '选择',
-              navigateText: '切换',
-            },
-          },
-        },
-      },
+        })
     },
-    /* 右侧大纲配置 */
-    outline: {
-      level: 'deep',
-      label: '本页目录',
-    },
-    footer: {
-      message: '如有转载或 CV 请标注本站原文地址',
-      copyright: `Copyright © 2021-${new Date().getFullYear()} 子十`,
-    },
-    darkModeSwitchLabel: '外观',
-    returnToTopLabel: '返回顶部',
-    lastUpdatedText: '上次更新',
-    docFooter: {
-      prev: '上一篇',
-      next: '下一篇',
-    },
-    socialLinks: [
-      {
-        icon: 'gitee',
-        link: 'https://gitee.com/zs2084035767',
-      },
-    ],
   },
-  // vite 配置，取消 sass 警告
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern',
-        },
-      },
-    },
-    plugins: [
-      RssPlugin({
-        title: '为自由献诗',
-        copyright: 'Copyright © 2021-present zs',
-        description: '任何限制自由的链条都将束缚我们的灵魂',
-        author: {
-          name: '子十',
-          email: 'jiangtzs@foxmail.com',
-        },
-        language: 'zh-CN',
-        icon: true,
-        baseUrl: 'https://www.jtao.fun',
-        filter: page => page.filepath.includes('/post/'),
-      }),
-    ],
-  },
+  // 主题配置
+  themeConfig,
+  // vite 配置
+  vite,
+  // 多语言配置
   locales: {
     root: {
       label: '简体中文',

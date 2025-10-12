@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 
 # 目标目录
-let targetDir = "F:..\\docs\\weekly"
+let targetDir = "F:\\vblog\\docs\\weekly"
 
 # 如目录不存在则自动创建
 if not ($targetDir | path exists) {
