@@ -1,4 +1,3 @@
-import { mark } from '@mdit/plugin-mark'
 import container from 'markdown-it-container'
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
@@ -22,7 +21,6 @@ export default defineConfig({
       lazyLoading: false,
     },
     config: md => {
-      md.use(mark),
         md.use(tabsMarkdownPlugin),
         md.use(container, 'steps', {
           render(tokens, idx) {
@@ -43,13 +41,13 @@ export default defineConfig({
       label: '简体中文',
       lang: 'zh',
     },
-    en: {
-      label: 'English',
-      lang: 'en',
-    },
-    ja: {
-      label: '日本語',
-      lang: 'ja',
-    },
+    // en: {
+    //   label: 'English',
+    //   lang: 'en',
+    // },
+    // ja: {
+    //   label: '日本語',
+    //   lang: 'ja',
+    // },
   },
 })
