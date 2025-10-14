@@ -2,7 +2,33 @@
 
 ### 嗨！👋🏻，我是子十
 
-我是一位 ~~在读大学生~~ ，`<Developer/>` 毕业生。**困于山林，难攀高峰。**
+我是一位 ~~在读大学生~~ ，`<Developer/>` 毕业生。<span id="me">困于山林，难攀高峰。</span>
+
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import Typewriter from 'typewriter-effect/dist/core';
+onMounted(() => {
+const heroEl = document.querySelector<HTMLElement>('#me')!
+ const originalText = heroEl.textContent || '' 
+ heroEl.textContent = '' 
+ new Typewriter(heroEl, {
+  delay: 60,
+  cursor: '◀',
+  loop: true,
+ })
+  .typeString(originalText)
+  .pauseFor(2000) 
+  .deleteAll(30) 
+  .pauseFor(1000) 
+  .start() 
+})
+ 
+
+</script>
+
+
+
+
 
 > 虽然不喜欢贴标签，但这里还是贴上吧，为了方便他人快速了解我。**或者你不必了解我**🤔。
 
@@ -58,7 +84,7 @@
 <Badge type="info" text="react" />
 <Badge type="info" text="vite" />
 
-⚙️ 后端
+⚙️ **后端**
 <Badge type="info" text="c" />
 <Badge type="info" text="python" />
 <Badge type="info" text="java" />

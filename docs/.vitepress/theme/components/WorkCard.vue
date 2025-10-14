@@ -48,7 +48,7 @@ defineProps<{
 /* ========== 卡片 ========== */
 .card {
   --border: 1px solid var(--vp-c-divider);
-  padding: var(--card-pad);
+  padding: var(--card-gap);
   border: var(--border);
   border-radius: var(--card-radius);
   background-color: var(--vp-c-bg-soft);

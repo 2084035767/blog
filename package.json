@@ -21,6 +21,7 @@
     "vue": "^3.5.18"
   },
   "dependencies": {
-    "markdown-it-container": "^4.0.0"
+    "markdown-it-container": "^4.0.0",
+    "typewriter-effect": "^2.22.0"
   }
 }

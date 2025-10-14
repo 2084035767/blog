@@ -95,10 +95,9 @@
  * 组件: 卡片 (Card) - 使用 clamp() 实现响应式尺寸
  * -------------------------------------------------------------------------- */
 :root {
-  --card-pad: clamp(1rem, 2vw, 1.5rem); // 卡片内边距 (最小1rem, 理想2vw, 最大1.5rem)
   --card-radius: clamp(8px, 1.2vw, 12px); // 卡片圆角 (最小8px, 理想1.2vw, 最大12px)
   --card-gap: clamp(1rem, 2vw, 1.5rem); // 卡片间距
   --card-phone: clamp(0.75rem, 4vw, 1.5rem); // 移动端卡片相关尺寸
   --card-pad: clamp(1rem, 5vw, 2rem); // 卡片内边距 (重复定义，后者会覆盖)
-  --card-pc: clamp(1.5rem, 6vw, 3rem); // PC端卡片相关尺寸
+  --card-pc: clamp(1rem, 6vw, 3rem); // PC端卡片相关尺寸
 }
